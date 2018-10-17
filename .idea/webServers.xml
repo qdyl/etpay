@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="58319ea0-4ecb-4cfa-be0d-96f95d65828f" name="com-net" url="http://192.168.31.193:1111">
+        <fileTransfer port="0" mountedRoot="E:\MywebDoc" accessType="MOUNT" />
+      </webServer>
+      <webServer id="6fef6641-1bac-4812-83b9-ee1a98c2413a" name="home-wifi" url="http://192.168.0.103:1111">
+        <fileTransfer port="0" mountedRoot="E:\MywebDoc" accessType="MOUNT" />
+      </webServer>
+      <webServer id="d5066a38-0bfc-4402-bb37-2cf1cc21421a" name="com-wifi" url="http://192.168.31.193:1111">
+        <fileTransfer port="0" mountedRoot="E:\MywebDoc" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

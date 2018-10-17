@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">币币转换</h2>
+</header>
+<div class="height-44"></div>
+<section id="bibizhuanhuan">
+    <ul class="">
+        <li class="xinbi-btns clearfix-zl">
+            <div class="xinbi-btn fl active">
+                <span>BTC</span>
+            </div>
+            <div class="xinbi-btn fr">
+                <span>ETH</span>
+            </div>
+        </li>
+    </ul>
+
+   <div class="btc-to-etpay-items">
+       <ul class="">
+           <li class="btc-to-etpay-title">
+               <div class="left com-div">
+                   <h4>BTC</h4>
+               </div>
+               <div class="center com-div">
+                   <i class="zhuanhuan-icon"></i>
+               </div>
+               <div class="right com-div">
+                   <h4>ETPAY</h4>
+               </div>
+           </li>
+           <li class="dai-f-item clearfix-zl">
+               <input  type="number" placeholder="请输入转换数量">
+               <span class="fr">BTC</span>
+           </li>
+           <li class="li-small">
+               <small>= 8900 ETPAY</small>
+           </li>
+           <li class="li-button">
+               <button type="submit" class="">提交</button>
+           </li>
+
+       </ul>
+
+       <ul class="none">
+           <li class="btc-to-etpay-title">
+               <div class="left com-div">
+                   <h4>ETH</h4>
+               </div>
+               <div class="center com-div">
+                   <i class="zhuanhuan-icon"></i>
+               </div>
+               <div class="right com-div">
+                   <h4>ETPAY</h4>
+               </div>
+           </li>
+           <li class="dai-f-item clearfix-zl">
+               <input  type="number" placeholder="请输入转换数量">
+               <span class="fr">ETH</span>
+           </li>
+           <li class="li-small">
+               <small>= 8900 ETPAY</small>
+           </li>
+           <li class="li-button">
+               <button type="submit" class="">提交</button>
+           </li>
+
+       </ul>
+   </div>
+</section>
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 切换：选项
+    $(".xinbi-btn").click(function () {
+        let indexx = $(this).index();
+        $(this).addClass("active").siblings(".xinbi-btn").removeClass("active");
+        $(".btc-to-etpay-items>ul").eq(indexx).css("display","block").siblings("ul").css("display","none");
+    });
+</script>
+</html>

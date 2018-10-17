@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=0">
+    <style>
+        /*input::-webkit-outer-spin-button,*/
+        /*input::-webkit-inner-spin-button {*/
+            /*-webkit-appearance: none;*/
+        /*}*/
+        select{width:100px;}
+        option{width:50px;}
+
+    </style>
+    <style>
+        .gw_num{border: 1px solid #dbdbdb;width: 110px;line-height: 26px;overflow: hidden;}
+        .gw_num em{display: block;height: 26px;width: 31px;float: left;color: #7A7979;border-right: 1px solid #dbdbdb;text-align: center;cursor: pointer;font-style:normal;}
+        .gw_num .num{display: block;float: left;text-align: center;width: 42px;font-style: normal;font-size: 14px;line-height: 24px;border: 0;}
+        .gw_num em.add{float: right;border-right: 0;border-left: 1px solid #dbdbdb;}
+    </style>
+</head>
+<body>
+<input type="number" name="points" min="1" max="10" >
+<input type="tel" name="points" min="1" max="10" >
+<select name="" id="linjunhong" onclick="changeWidth()" onblur="resetWidth()">
+    <option value="111">1111111111111111111111111111111111111111</option>
+    <option value="222">222</option>
+    <option value="333">333</option>
+    <option value="444">444</option>
+</select>
+
+
+
+<tbody>
+
+    <tr>
+        <!--<td >数量<input type="hidden" name="names" value="${uservo.username}"/></td>-->
+
+        <td align="center">
+            <div class="gw_num">
+                <em class="jian" style="font-weight: 600;"><</em>
+                <input type="text" value="0"  name="scores" class="num" readonly/>
+                <em class="add">+</em>
+            </div>
+        </td>
+    </tr>
+
+</tbody>
+
+</body>
+<script src="../js/jquery-2.1.4.min.js"></script>
+<script>
+    function changeWidth(){
+        $('#linjunhong').css("width","auto");
+    }
+    function resetWidth(){
+        $('#linjunhong').css("width","100px");
+    }
+
+    /**/
+    $(".add").click(function(){
+        var n=$(this).prev().val();
+        var num=parseInt(n)+10;
+        if(num>120){ return;}
+        $(this).prev().val(num);
+    });
+    //减的效果
+    $(".jian").click(function(){
+        var n=$(this).next().val();
+        var num=parseInt(n)-10;
+        if(num<0){ return;}
+        $(this).next().val(num);
+    });
+</script>
+</html>

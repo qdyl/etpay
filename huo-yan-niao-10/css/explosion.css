@@ -1,0 +1,79 @@
+header {
+  height: 0.64rem;
+  text-align: center;
+}
+header .black-cross {
+  width: 0.13rem;
+  height: 0.13rem;
+  left: 0.13rem;
+  top: 0.27rem;
+  background: url("../images/black-cross-icon.png") 100% no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+header .title {
+  font-weight: 600;
+  line-height: 0.64rem;
+  font-size: 15px;
+  color: #4A4A4A;
+}
+section .alarm {
+  height: 0.44rem;
+  background: #CFC2D2;
+  padding-left: 0.13rem;
+}
+section .alarm .huoyan-icon {
+  width: 0.16rem;
+  height: 0.21rem;
+  background: url("../images/huoyan-icon.png") no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  vertical-align: middle;
+}
+section .alarm .alarm-text {
+  line-height: 0.44rem;
+  font-size: 14px;
+  color: #fff;
+}
+section .alarm .white-cross {
+  width: 0.23rem;
+  height: 0.2rem;
+  margin-right: 0.14rem;
+  margin-top: 0.14rem;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  background: url("../images/white-cross-back.png") no-repeat;
+  -webkit-background-size: 60%;
+  background-size: 60%;
+}
+section .main {
+  text-align: center;
+}
+section .main img {
+  margin: 0.35rem 0 0.28rem 0;
+  width: 1.09rem;
+  height: 1.09rem;
+}
+section .main .main-text {
+  margin: 0 auto;
+  width: 2.48rem;
+  text-align: center;
+}
+section .main .main-text p {
+  word-wrap: break-word;
+  word-break: normal;
+  font-size: 14px;
+  color: #A38698;
+  line-height: 0.22rem;
+}
+section .button {
+  margin: 0.61rem 0.46rem 2.51rem;
+  width: 2.83rem;
+  height: 0.4rem;
+  background: #D5369A;
+  color: #fff;
+  font-size: 14px;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+}

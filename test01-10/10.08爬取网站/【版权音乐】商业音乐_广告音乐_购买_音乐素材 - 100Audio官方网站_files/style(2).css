@@ -1,0 +1,943 @@
+/*
+Theme Name: 100Audio - Child Theme
+Theme URI: http://100audio.com
+Author: Paul
+Author URI: http://astoundify.com
+Description: 100Audio digital marketplace.
+Version: 1.1.0
+License: 100audio General Public License
+License URI: license.txt
+Text Domain: 100Audio
+Domain Path: /languages/
+Tags: white, two-column, one-column, right-sidebar, left-sidebar, flexible-width, custom-background, custom-header, theme-options, full-width-template, featured-images, flexible-header, custom-menu, translation-ready
+Template: marketify
+*/
+
+/**
+ * Place Custom CSS Below this.
+ */
+.edd_download_inner{border-bottom: 1px solid #eee;}
+.content-grid-download__entry-header {border: 0px none;padding: 10px;}
+.content-grid-download__entry-image {float: left; }
+.content-grid-download__entry-image a{padding: 13px 8px 0px 10px;}
+/*Download img */
+.content-grid-download__entry-image img{
+	border-radius: 2%;
+	max-width:125px;max-height:125px;
+}
+.content-grid-download {
+    margin-bottom: 5px;
+}
+.edd_downloads_list.facetwp-template.row.download-grid-wrapper.edd_download_columns_1 {
+    border-top-color: rgb(238, 238, 238);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(238, 238, 238);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(238, 238, 238);
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    border-left-color: rgb(238, 238, 238);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-radius: 5px;
+}
+.edd_downloads_list .col-xs-12 {
+    padding-left: 5px;
+    padding-right: 8px;
+    padding-top: 3px;
+}
+.wavesurfer-buttons_set button {
+    font-weight: 500;
+    font-size: 10px;
+}
+.content-grid-download__entry-price {float:right;margin: 55px 10px 10px 0px;}
+.item-price {display: block;margin-bottom: 20px;font-size: 12px;font-weight: normal;}
+/**.item-price {display: inline-block;margin-bottom: 20px;font-size: 12px;font-weight: normal;} */
+.edd_price {font-weight: normal;font-size: 12px;}
+.entry-title {font-size: 14px;}
+.content-grid-download__entry-image img{min-width:auto;}
+.content-grid-download .download-audio {display: block;}
+.wavesurfer-buttons_set{display: inline-block;}
+.wavesurfer-time{display: inline-block;position: absolute;bottom: 10px;right: 75px;font-size: 10px;}
+.wavesurfer-duration{display: inline-block;position: absolute;bottom: 10px;right: 10px;font-size: 10px;}
+.wavesurfer-list-group{display: none;}
+.byline{position: absolute;top:10px;right: -0px;}
+
+/*1排时，作者头像消失 */
+.byline img {
+    border-radius: 50%;
+    margin: -2px 0 0 4px;
+    width: 0px;
+    height: 0px;
+	}
+
+/*不显示STOP按钮*/
+.wavesurfer-stop{display: none;}
+
+/*上传页面不显示时长选择*/
+.fes-el.text.fes_length{display: none;}
+
+/*上传页面不显示类别选择*/
+.fes-el.download_category.download_category{display: none;}
+
+/*上传页面不显示demo上传*/
+.fes-el.file_upload.File_Upload{display: none;}
+
+/*上传页面不显示保存草稿*/
+input#fes-save-as-draft.edd-submit.button{display: none;}
+
+/*1排时，低于x 下载按钮隐藏*/
+@media (max-width: 991px) {
+ .edd_download_columns_1 .wavesurfer-download{
+        display:none;
+    }
+}
+
+/*2行排列时，当标题小于x像素时，只显示xem个数的字，其他省略*/
+@media (max-width: 1460px) {
+ .edd_download_columns_2 .entry-title{
+        width:10em; white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; -moz-binding:url('ellipsis.xml#ellipsis'); overflow:hidden;
+    }
+}
+/*1行排列时，当标题小于x像素时，只显示xem个数的字，其他省略*/
+@media (max-width: 800px) {
+ .edd_download_columns_1 .entry-title{
+        white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; -moz-binding:url('ellipsis.xml#ellipsis'); overflow:hidden;
+    }
+}
+
+/*2排时，低于x 当前时间隐藏*/
+@media (max-width: 1200px) {
+ .edd_download_columns_2 .wavesurfer-time{
+        display:none;
+    }
+}
+
+/*2排时，低于x像素，作者介绍文字消失*/
+@media (max-width: 2600px) {
+.edd_download_columns_2 .byline{
+        font-size:0; overflow:hidden;
+    }
+}
+
+/*1排时，download button消失 */
+@media (max-width: 600px) {
+ .edd_download_columns_1 .wavesurfer-download{
+        display:none;
+    }
+}
+
+/*低于x时2排时，loop button消失*/
+@media (max-width: 2500px) {
+ .edd_download_columns_2 .wavesurfer-loop{
+        display:none;
+    }
+}
+/*低于x时2排时，download button消失*/
+@media (max-width: 2500px) {
+ .edd_download_columns_2 .wavesurfer-download{
+        display:none;
+    }
+}
+
+.group-select {
+    position: relative;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f5f5f5;
+}
+.group-select>select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 25px 0 30px;
+    background: none;
+    border: 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: 38px;
+    line-height: 38px;
+    color: #666;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.group-select:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #666;
+    border-top: none;
+    height: 0;
+    width: 0;
+    top: 33%;
+}
+.group-select:after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+    border-bottom: none;
+    height: 0;
+    width: 0;
+    top: 53%;
+}
+.group-select.-border-radius-bottom {
+	    border-top: 0;
+    border-radius: 0 0 4px 4px;
+}
+.group-select:after, .group-select:before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+}
+@media (min-width: 769px) {
+	body .edd_download a.edd-wl-action.edd-wl-button:focus {
+ 	   outline: none;
+	}
+
+	.edd-wish-list .facetwp-template+#edd_download_pagination {
+		display: block;
+	}
+
+	.edd-wl-add-all-to-cart.vc_btn3-container {
+		margin-top: -35px;
+	}
+	/* 已收藏 */
+	body .edd_download a.edd-wl-action.edd-wl-button.edd-wl-favorite.favorited {
+    display: inline-block;
+    position: absolute;
+    border: 0.5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 5px 2px 4px;
+    right: 10px;
+    top: 14px;
+	}
+	/* 收藏样式 */
+	body .edd_download .content-grid-download__entry-image a:hover+a.edd-wl-action.edd-wl-button.edd-wl-favorite, body .edd_download a.edd-wl-action.edd-wl-button.edd-wl-favorite:hover {
+    display: inline-block;
+    position: absolute;
+    border: 0.5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.15);
+	color: #fff;
+	border-radius: 3px;
+	padding: 2px 5px 2px 4px;
+	right: 10px;
+	top: 14px;
+	}
+	/* 鼠标移动上去 */
+	body .edd_download a.edd-wl-action.edd-wl-button.edd-wl-favorite:hover, body .edd_download .content-grid-download__entry-image a:hover+a.edd-wl-action.edd-wl-button.edd-wl-favorite.favorited {
+		background-color: rgba(0, 0, 0, 0.25);
+	}
+	i.glyphicon.glyphicon-heart {
+		left: 2px;
+		font-weight: bold;
+	}
+}
+
+div[data-columns].edd_downloads_list .content-grid-download {
+	max-width: 100% !important;
+}
+
+/* 隐藏fes多版本zip上传 */
+#fes-vendor-dashboard .multiple_pricing .fes-single-variation{display: none;}
+#fes-vendor-dashboard .multiple_pricing .fes-single-variation:first-child{display: table-row;}
+.fes-vendor-dashboard .fes-ajax-form .fes-submission-form-div > fieldset > div{margin-bottom: 25px;}
+
+/* 调整论坛搜索条 */
+#bbp-search-form #bbp_search {
+float:right
+}
+#bbp-search-form #bbp_search_submit {display: none;}
+
+.search-form .search-field {
+    height: 40px;
+}
+
+/* 隐藏fes音乐人资料 */
+.fes-vendor-dashboard-wrap .fes-vendor-dashboard .bbp-breadcrumb, .fes-product-list-td .attachment-100x100.wp-post-image, .fes-el.license, .fes-el.fes-yingyezhizhao, .fes-el.user_avatar .fes-avatar-image-btn, .fes-remove-avatar-image, .fes-el.fes-hezuofangshi {
+	display: none;
+}
+
+/* 隐藏日文音乐人页面多语言弹出 */
+.post-5788.page.type-page.status-publish.hentry .qtranxs-available-languages-message.qtranxs-available-languages-message-ja, .post-328945.page.type-page.status-publish.hentry .qtranxs-available-languages-message.qtranxs-available-languages-message-ja {
+	display: none;
+}
+
+/* 隐藏修改个人资料 */
+#edd_profile_display_name_wrap, #eddc_profile_paypal_fieldset, #edd_profile_primary_email_wrap {
+	display: none;
+}
+
+/* 隐藏社交登陆 */
+.xh_social_box:lang(en-US), .xh_social_box:lang(ja), .post-712420 .um-col-1 > div:nth-child(1):lang(en-US), .post-712420 .um-col-1 > div:nth-child(1):lang(ja), .post-712422 .um-field-username > div:nth-child(1):lang(en-US),  .post-712422 .um-field-username > div:nth-child(1):lang(ja){
+	display: none;
+}
+.facetwp-template+#edd_download_pagination {
+    display: none;
+}
+/* 高于x像素，body 上下间隔*/
+@media (min-width: 769px) {
+.site-content{
+    margin-top: 2em;
+    margin-bottom: 3em;
+ }
+}
+
+/* 低于x像素，body 上下间隔*/
+@media (max-width: 769px) {
+.site-content{
+    margin-top: 0em;
+    margin-bottom: 3em;
+ }
+}
+
+/* 低于x像素，foot消失*/
+@media (max-width: 769px) {
+.footer-widget-areas, .site-info,.site-footer{
+      display: none;
+    }
+}
+
+/* Mobile Footer */
+@media (min-width: 769px) {
+    #mobile-header, #menu-mobile-footer, .mobile-download-toolbar {
+        display: none;
+    }
+}
+.search-form .search-submit {
+	height: 40px;
+}
+.container .site-info .col-sm-6{
+	display: none;
+}
+
+@media (max-width: 768px) {
+    #responsive-menu-pro-button {
+        position: absolute;
+        left: -9999px;
+    }
+
+    #mobile-header {
+        background-color: #303539;
+        color: #fff;
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 999;
+        padding: 8px 16px;
+    }
+
+    #mobile-header.dark + #page {
+        margin-top: 56px;
+    }
+	.page-id-4 #mobile-header.dark + #page {
+	    margin-top: -10px;
+	}
+    #mobile-header.light + #page {
+        margin-top: 10px;
+    }
+
+    #mobile-header.light {
+		text-align: center;
+		position: relative;
+		display: inline-block;
+		width: 100%;
+        background-color: #fff;
+        color: #303539;
+        box-shadow: 0 5px 5px rgba(205,205,205,0.6);
+        padding: 6px 3.3em 6px 3.3em;
+    }
+
+    #mobile-header h1 {
+        font-size: 1.6em;
+        font-weight: bold;
+        float: left;
+        display: block;
+    }
+
+    #mobile-header.light h1 {
+        display: none;
+    }
+
+    #mobile-header a.mobile-back-button {
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        text-decoration: none;
+        width: 30px;
+        max-height: 30px;
+    }
+
+    #mobile-header a.mobile-back-button:before {
+        font: normal normal normal 20px/1 FontAwesome;
+        content: '\f177';
+    }
+
+    #mobile-header h2 {
+        display: block;
+        float: left;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+		width:96%;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+		-moz-binding:url('ellipsis.xml#ellipsis');
+		overflow:hidden;
+
+    }
+
+    #mobile-header h1 a {
+        color: #fff;
+        text-decoration: none;
+
+    }
+
+    #mobile-header .search-form {
+        float: right;
+        width: 80%;
+    }
+
+    #mobile-header .search-field {
+        border: none;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 85%;
+        max-height: 37px;
+    }
+
+    #mobile-header .search-form .search-submit {
+        color: #515a63;
+        height: auto;
+        padding: 8px 0;
+        line-height: 1em;
+        background-color: #fff;
+        width: 15%;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+    #mobile-header .search-form .search-submit:before {
+        content: '\f002';
+        font: normal normal normal 20px/1 FontAwesome;
+    }
+
+    .page-header, .header-outer {
+        display: none;
+    }
+
+    body.single-download .header-outer, body.single-download .page-header {
+        display: block;
+    }
+    body.single-download .header-outer .site-header .container{
+        display: none;
+    }
+
+    body.single-download #mobile-header + #page {
+        margin-top: -10px;
+    }
+
+    #menu-mobile-footer {
+        background-color: rgba(255, 255, 255, 0.9);
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        z-index: 999;
+		border-top: 1px solid #ededed;
+    }
+
+    #menu-mobile-footer li {
+        width: 20%;
+        width: 20%;
+        display: block;
+        float: left;
+        text-align: center;
+    }
+
+    #menu-mobile-footer a:before {
+        font: normal normal normal 28px/1 FontAwesome;
+        display: block;
+        color: #515a63;
+    }
+
+    #menu-mobile-footer a {
+        text-decoration: none;
+        font-size: 10px;
+        display: inline-block;
+        margin: 4px;
+		width: 120px;
+    }
+
+    #menu-mobile-footer li.home a:before {
+        content: "\f015";
+    }
+
+    #menu-mobile-footer li.search a:before {
+        content: "\f001";
+    }
+
+    #menu-mobile-footer li.checkout a:before {
+        content: "\f07a";
+    }
+
+    #menu-mobile-footer li.order a:before {
+        content: "\f007";
+    }
+
+    #menu-mobile-footer li.more a:before {
+        content: "\f0c9";
+    }
+
+    #menu-mobile-footer li.checkout a {
+        position: relative;
+    }
+
+    .hdad-cart-quantity {
+        display: block;
+        background: rgba(224, 3, 3, 1);
+        color: #fff;
+        border-radius: 20px;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 0px;
+        right: 30px;
+    }
+
+    .mobile-download-toolbar {
+        display: block;
+        width: 100%;
+        float: left;
+    }
+
+    .mobile-download-toolbar a {
+        display: block;
+        width: 33%;
+        line-height: 1em;
+        height: 1em;
+        margin: 10px 0 20px 0;
+        float: left;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .mobile-download-toolbar a {
+        font: normal normal normal 24px/1 FontAwesome;
+    }
+
+    .mobile-download-toolbar a.share:before {
+        content: '\f045';
+    }
+
+    .mobile-download-toolbar a.like:before {
+        content: '\f08a';
+    }
+
+    .mobile-download-toolbar a.like.favorited:before {
+        content: '\f004';
+    }
+
+    .mobile-download-toolbar a.cart:before {
+        content: '\f07a';
+    }
+
+    .mobile-download-toolbar a.cart.in_cart:before {
+        content: '\f217';
+    }
+	.content-area .section-title:first-of-type, .download-header__info {
+		display:none;
+	}
+	.single-download .page-header .wavesurfer-time{
+		position: absolute;bottom: 10px;right: 80%;
+	}
+	#edd_checkout_form_wrap .edd-payment-icons{
+		display:none;
+	}
+	.ult_tabitemname{
+		padding:2px 0px 12px;
+	}
+	.entry-content table td {
+	    padding: 14px 1px;
+	}
+}
+
+@media (max-width: 504px) {
+    #mobile-header .search-form {
+        width: 60%;
+    }
+
+    #menu-mobile-footer a:before {
+        font: normal normal normal 28px/1 FontAwesome;
+    }
+
+    #menu-mobile-footer a {
+        font-size: 12px;
+        margin-top: 4px;
+        margin-right: auto;
+        margin-bottom: 3px;
+        margin-left: auto;
+		width: 100%;
+    }
+
+    .hdad-cart-quantity {
+        border-radius: 10px;
+        width: 18px;
+        height: 18px;
+        top: 0;
+        right: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    #mobile-header .search-form {
+        width: 55%;
+    }
+}
+
+/* home左侧字体 */
+.resp-ajax-page-listing .page-listing-content ul.nav-tabs > li > a {
+    display: block;
+    padding: 20px 10px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-radius: 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(221,221,221,0.3);
+	font-size: 13px;
+	text-decoration: none
+}
+
+/* home白色底 */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+/* home无边 */
+.home-mobile4 .vc_column_container .vc_column-inner {
+box-sizing:border-box;
+padding-left:0px;
+padding-right:0px;
+width:100%;
+}
+/* home无上面title */
+.resp-ajax-page-listing .block-title {
+   display: none;
+}
+
+/* home */
+.home-mobile4.vc_column_container>.vc_column-inner {
+box-sizing: border-box;
+padding-left: 15px;
+padding-right: 15px;
+width: 100%;
+}
+
+.resp-ajax-page-listing {
+  position: relative;
+}
+.resp-ajax-page-listing p {
+  margin: 0 0 3px;
+}
+.resp-ajax-page-listing .page-listing-content ul.nav-tabs {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 3;
+  width: 90px;
+  margin: 0;
+  background-color: #24282c;
+  border: 0;
+  border-radius: 0;
+  min-height: 100%;
+}
+.resp-ajax-page-listing .page-listing-content ul.nav-tabs > li {
+  text-align: left;
+  line-height: 20px;
+  width: 100%;
+}
+.resp-ajax-page-listing .page-listing-content ul.nav-tabs > li.active > a {
+  border: 0;
+  margin: 0;
+  color: #222;
+  border-bottom: 0;
+}
+/* .resp-ajax-page-listing .page-listing-content ul.nav-tabs > li > a:hover {
+  color: #2874f0;
+} */
+.resp-ajax-page-listing .page-listing-content .tab-content {
+  margin: 3px 0 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .vc_column_container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 -3px;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal .vc_column_container {
+  padding-left: 0;
+  padding-right: 0;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal .wpb_single_image {
+  float: left;
+  padding: 0 3px;
+  margin: 0 0 5px;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal .wpb_single_image.banner2 {
+  width: 66.56%;
+}
+.resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal .wpb_single_image.banner1 {
+  width: 33.33%;
+}
+@media (max-width: 415px) {
+  .resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal {
+    width: 101%;
+    margin: 0 -5px;
+  }
+}
+@media (max-width: 375px) {
+  .resp-ajax-page-listing .page-listing-content ul.nav-tabs {
+    width: 80px;
+  }
+  .resp-ajax-page-listing .page-listing-content .tab-content {
+    margin: 3px 0 0 86px;
+  }
+  .resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal {
+    width: 100%;
+    margin: 0 -3px;
+  }
+}
+@media (max-width: 360px) {
+  .resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal .wpb_single_image.banner2 {
+    width: 66.56%;
+  }
+  .resp-ajax-page-listing .page-listing-content ul.nav-tabs {
+    width: 80px;
+  }
+  .resp-ajax-page-listing .page-listing-content ul.nav-tabs > li > a {
+    padding: 15px 7px;
+  }
+  .resp-ajax-page-listing .page-listing-content .tab-content {
+    margin: 3px 0 0 86px;
+  }
+  .resp-ajax-page-listing .page-listing-content .tab-content .tab-pane .banner-mobile-hotdeal {
+    width: 100%;
+    margin: 0 -3px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs-justified {
+  border-bottom: 0;
+}
+.nav-tabs-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.nav-tabs-justified > .active > a,
+.nav-tabs-justified > .active > a:hover,
+.nav-tabs-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+.tab-content > .tab-pane {
+  display: none;
+}
+.tab-content > .active {
+  display: block;
+}
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#edd_checkout_form_wrap #edd-payment-mode-wrap .edd-payment-mode-label {
+    display: none;
+}
+#edd-payment-mode-wrap #edd-gateway-option-stripe.edd-gateway-option:lang(zh-CN){
+    display: none;
+}
+.edd_download_purchase_form .edd_price_options .edd_price_option_price:lang(ja){
+    font-size: 12px;
+}
+.edd-download-cat-bundles .content-grid-download__entry-price,.edd-download-cat-bundles .wavesurfer-stop, .edd-download-cat-bundles .wavesurfer-loop,.edd-download-cat-bundles .wavesurfer-download,.edd-download-cat-bundles .mobile-download-toolbar,.edd-download-cat-bundles div.content-grid-download__entry-image{display:none;}
+
+.buying-intro:lang(zh-CN) { display: inline-block; position: relative; bottom: 10px; font-size:12px;}
+.buying-intro:lang(en) { display: none;}
+.buying-intro:lang(ja) { display: none;}
+
+/** 100Audio产品实例 **/
+.wpb_wrapper .ts-postsslider .ts-timeline-date {display: none;}
+.wpb_wrapper .ts-isotope-posts-title {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    margin: 0 auto!important;
+    padding: 0px 10px!important;
+}
+.wpb_wrapper .ts-isotope-posts-thumb {padding: 0px;}
+.wpb_wrapper .ts-isotope-posts-excerpt {display: none;}
+
+/* You are about to delete your favorites, are you sure? */
+#edd-wl-modal.modal.fade{display:none;}
+
+@media screen and (min-width: 992px){
+#text-69.widget--home{
+    margin-top: 1px;
+}}
+
+/* blog页 */
+.page-header__entry-meta .byline {
+    top: 0px;
+}
+.entry-meta--hentry .post-edit-link , .comment-respond{
+    display: none;
+}
+
+.page-id-64312 .wavesurfer-time , .page-id-64312 .wavesurfer-duration {
+    display: none;
+}
+
+/* music blog */
+.post-199047 .ts-isotope-posts-thumb img{
+	width:100%;
+	height:172px;
+}
+
+#edd_checkout_form_wrap fieldset #edd-email-wrap {
+	display: none;
+}
+/* download页面标签宽度 */
+@media (min-width: 1200px) {
+#download_tag td.fes-display-field-values {
+    width: 600px;
+}}
+@media (max-width: 1200px) {
+.entry-content table td {
+    width: 130px;
+	}}
+
+/* 产品详细页面不显示标题 */
+#content > div.content-area.col-xs-12.col-md-8 > h2, #marketify_widget_download_details-23 > h3 {display:none;}
+@media screen and (min-width: 992px){
+.marketify-widget--download-single-details {
+    margin-top: 0px;
+}}
+
+/* 购物车结算显示人民币 */
+#edd_final_total_wrap:lang(en-US), #edd_final_total_wrap:lang(ja) {
+    display: none;
+}
+/* 不显示佣金率 */
+#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-wp_rate,#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-wa_rate,#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-im_rate,#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-gr_rate,#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-co_rate,#fes-vendor-dashboard > div > fieldset > div.fes-el.text.fes-we_rate{display:none;}
+
+@media (min-width: 769px) {
+/* 獨家音樂人角標 */
+.vendor-exclusive{
+    padding: 0 !important;
+border-bottom: 15px solid #4f575E;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    width: 45px;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 19px;
+    left: 0px;
+    /*
+top: -2px;
+    left: -26px;
+ */
+}
+.vendor-exclusive.en{
+
+}
+.vendor-exclusive:before {
+  content: "独家";
+  display: block;
+  width: 63px;
+  position: absolute;
+  left: 0px;
+  top: 1px;
+  color: #fff;
+  font-size: 9px;
+}
+.vendor-exclusive.en:before {
+	content: 'Exclusive';
+	font-size: 7px;
+	left: -7px;
+    top: 3px;
+}
+}
+
+#text-122, #text-123 {
+    display: none;
+}
+
+.exclusive-vendor #text-122, .exclusive-vendor #text-123 {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.exclusive-vendor #text-122 img, .exclusive-vendor #text-123 img {
+    max-width: 40px;
+    float: left;
+    margin-top: -5px;
+}
+
+.exclusive-vendor #text-122 p, .exclusive-vendor #text-123 p {
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.exclusive-vendor #text-123 p {
+    font-size: 13px;
+}
+.home .page-header{
+	padding-bottom: 8em;
+}

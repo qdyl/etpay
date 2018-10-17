@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" onclick="copy('api.xslfgame.com/wxchatlogin/index?agentId={$member)" value="api.xslfgame.com/wxchatlogin/index?agentId={$member['id']}" readonly="readonly" />-->
+
+<!--<input type="text" onclick="copy2('http://任意文本')" value="http://任意文本" readonly="readonly">-->
+<textarea name="" id="" cols="30" rows="10"   readonly="readonly">http://任意文本333</textarea>
+<span onclick="copy33('http://任意文本333')">点击复制</span>
+
+
+</body>
+<script language="javascript">
+    function copy(message) {
+        var input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length);
+        document.execCommand('Copy');
+        document.body.removeChild(input);
+        alert("复制成功");
+    }
+</script>
+// 版本2
+<script language="javascript">
+    function copy2(message) {
+        var input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+        alert("复制成功22");
+    }
+
+    function copy33(message) {
+        var input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+        alert("复制成功33");
+    }
+</script>
+
+</html>

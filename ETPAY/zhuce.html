@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">注册</h2>
+</header>
+<div class="height-44"></div>
+
+<section id="zhuce">
+    <form action="###">
+        <ul class="items">
+            <li class="item">
+                <i class="icon one-icon"></i>
+                <input type="text" placeholder="请输入用户名">
+            </li>
+            <li class="item">
+                <i class="icon two-icon"></i>
+                <input type="text" placeholder="请输入手机号码">
+            </li>
+            <li class="item">
+                <i class="icon three-icon"></i>
+                <input type="text" placeholder="请输入密码">
+            </li>
+            <li class="item">
+                <i class="icon four-icon"></i>
+                <input type="text" placeholder="请确认密码">
+            </li>
+            <li class="item">
+                <i class="icon five-icon"></i>
+                <input type="text" class="five-input" placeholder="验证码">
+                <span class="yanzhengma">获取验证码</span>
+            </li>
+            <li class="item">
+                <i class="icon six-icon"></i>
+                <input type="text" placeholder="推荐码">
+            </li>
+            <li class="item tongyi-item ">
+                <input  type="checkbox" id="yuedu" class="fl">
+                <label for="yuedu">
+                    我已阅读并同意《ET全球数字货币交易所用户协议》
+                </label>
+            </li>
+            <li class="item text-align-center">
+                <button type="submit">注册</button>
+            </li>
+
+        </ul>
+    </form>
+
+</section>
+
+
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+    $(".tongyi-item").click(function () {
+        $(this).toggleClass("active")
+    })
+</script>
+</html>

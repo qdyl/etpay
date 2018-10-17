@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width:100px;
+            display: inline-block;
+        }
+        /*select:hover{*/
+            /*color: #67ff09;*/
+        /*}*/
+        option:hover{
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+
+<select name="" id="select">
+    <option value="11">11</option>
+    <option value="22">22</option>
+    <option value="33">33</option>
+</select>
+<ul class="items" style="display: inline-block">
+    <li class="item" style="display: none">111</li>
+    <li class="item" style="display: none">222</li>
+    <li class="item" style="display: none">333</li>
+</ul>
+
+<!--
+
+<hr>
+<select id="select7">
+    <option value="0">All</option>
+    <optgroup label="大选项1">
+        <option value="4">大选项1的子选项A</option>
+        <option value="5">大选项1的子选项B</option>
+    </optgroup>
+    <optgroup label="大选项2">
+        <option value="6">大选项2的子选项A</option>
+        <option value="7">大选项2的子选项B</option>
+    </optgroup>
+    <optgroup label="大选项3">
+        <option value="8">大选项3的子选项A</option>
+        <option value="9">大选项3的子选项B</option>
+    </optgroup>
+-->
+
+
+
+</body>
+<script src="../js/jquery-2.1.4.min.js"></script>
+<script>
+    $("#select").change(function () {
+        var index = $("#select option:selected").index();
+       /* alert(index);*/
+        $(".items li").eq(index).css("display","block").siblings("li").css("display","none")
+
+    });
+    $("#select").mouseleave(function () {
+        var index = $("#select option:selected").index();
+        /* alert(index);*/
+        $(".items li").eq(index).css("display","block").siblings("li").css("display","none")
+
+    });
+
+</script>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>{:website()['site_name']}-卡密商品购买页面</title>
+    <meta name="keywords" content="{:website()['keyword']}" />
+    <meta name="description" content="{:website()['describe']}"
+    <link rel="shortcut icon" href="/theme/bitbug_favicon.ico" />
+    <link href="./css/ak_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+    <script type="text/javascript" src="./js/jquery-1.9.min.js"></script>
+    <style>
+        .xzsrk2,.xzsrk{margin-left: 20px!important;}
+        .logo a{display: block;}
+        header{height: 80px;}
+        header>ul{font-size:12px;line-height: 80px;}
+        header>ul>li{float: left;font-family: PingFangSC-Regular;font-weight: normal;font-stretch: normal;  }
+        header>ul>li:nth-child(1){letter-spacing: 0px;color: #333;margin-right:18px;}
+        header>ul>li:nth-child(2) a{color: #2591ff;}
+        header>ul>li:nth-child(2){color: #2591ff;}
+        .fr.phone-ma{width:auto;}
+        div.gonggao{width:auto;}
+        .col666{color:#18cc11;}
+        span.zffs_box{
+            margin-right:0;}
+        .zfxz_box.active1{padding-left:80px;}
+        div.phone-ma {
+            margin-right: 150px;
+        }
+        .add-business-icon{
+            margin-left: -5px;
+        }
+        .add-business-icon>img{  margin:0 6px;  width:25px;  height:25px;  }
+        span#jiag{  font-weight:600;  }
+        span.shuomings{  vertical-align: middle;}
+        header.fr{margin-right:50px;}
+        header ul li {  font-size: 15px;  }
+        .over.mar28 p.ma-txt {  text-align: center; margin-top: 5px; }
+        /*余额*/
+        .balance-payment-wrap.psw-alert.center{position: fixed;top:50%;left:50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .balance-payment-text li {  margin-bottom: 17px;  }
+        .ok-and-cancel {  letter-spacing: 1px;  border-radius: 5px;  margin: 0 auto 20px;  width: 150px;  height: 40px;  line-height: 40px;  text-align: center;  color: #fff;  background: #108ee9;  font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<title></title>
+<!-- 页头 开始 -->
+<div class="top_in" style="position: fixed; top:0;height:90px;width:100%;background: #000;z-index: 5;">
+    <div style="width:1200px;margin:0 auto;">
+        <div class="logo" ><a href="/"><img src="/theme/default/img/logo.png" alt="爱卡" /></a></div>
+        <header class="fr">
+            <ul>
+                <li class="header-search-img">
+                    <a href="{:url('user/search/index')}" title="订单搜索"><img src="/theme/default/img/tgp-search-icon.png" alt=""></a>
+                </li>
+                <li>欢迎来到畅享发卡平台！</li>
+                {if session('user_auth.uid')==null}
+                <li><a href="{:url('common/login')}">请登录</a> &nbsp <a href="{:url('common/register')}">免费注册</a></li>
+                {/if}
+                {if session('user_auth.uid')!==null}
+                <li style="color:#2591ff">欢迎&nbsp;{:leftpanel()['username']}&nbsp;&nbsp;&nbsp;<a href="{:url('User/common/logout')}" style="color:#2591ff">退出登录</a></li>
+                {/if}
+            </ul>
+        </header>
+    </div>
+</div>
+<div class="top_bg" >
+</div>
+<!-- 页头 结束 -->
+<!-- 上部分 开始 -->
+<form id="form" method="post" action="{:url('kami/pay_order')}" >
+    <div class="shangjia_wai" style="width: 1200px;">
+        <div class="shangjia_out" style="width: auto;float: none;">
+            <div class="shangjia_t_bg">商家信息</div>
+            <div class="shagnjia_kuang over" style="height: auto;">
+                <div class="shangjia_nei fl" style="margin-left: 20px;">
+                    <div class="shangjiamc">
+                        <div class="gonggao">商家名称：11111{$merchant['merchant']}</div>
+                    </div>
+                    <div class="add-business-icon">
+                        {if $merchantca==null}
+                        <img src="/theme/default/img/shenf2.png" title="未实名认证"/>
+                        {else}<img src="/theme/default/img/business-shenf.png"  title="实名认证">{/if}
+                        {if $deposit['cash_deposit']==0 ||$deposit==null}
+                        <img src="/theme/default/img/baozhenj2.png" title="未缴纳保证金"/>
+                        {else}
+                        <img src="/theme/default/img/business-baozhenj.png" alt="" title="保证金">{/if}
+                        {if $email==null}
+                        <img src="/theme/default/img/youx2.png" title="邮箱未认证"/>
+                        {else}
+                        <img src="/theme/default/img/business-youx.png" alt="111" title="邮箱认证">{/if}
+                        {if $vip==null}
+                        <img src="/theme/default/img/vip2.png" title="VIP商家未认证"/>
+                        {else}
+                        <img src="/theme/default/img/business-vip.png" alt="222" title="VIP商家">{/if}
+                        {if $teyue==null}
+                        <img src="/theme/default/img/teyue2.png" title="不是特约商户"/>
+                        {else}
+                        <img src="/theme/default/img/business-teyue.png" alt="" title="特约商户">{/if}
+                    </div>
+                    <div class="shangjiamc">
+                        <div class="gonggao">商家网站：</div>
+                        <span class="gonggao_de"><span id="surl"><a href="{$merchant['store_url']}" target="_blank" style="color: #252525;">{$merchant['store_url']}</a></span></span>
+                    </div>
+                    <div class="shangjiaqq">
+                        <div class="gonggao">商家ＱＱ： <span id="sqq">{if $merchant['qq']==null}该商家还没有添加qq认证{else}{$merchant['qq']}{/if}</span></div>
+                        <div class="showq2">
+                            <span id="sqq2"><a href="tencent://message/?uin={$merchant['qq']}&Site={$merchant['qq']}&Menu=yes" title="{$merchant['qq']}"><img src="/theme/default/pay/pay1/images/kf_qq.gif" alt="点击咨询" align="absmiddle"></a></span>
+                        </div>
+                    </div>
+                    {if $merchant['qq_q']}
+                    <div class="shangjiaqq">
+                        <div class="gonggao">商家Ｑ群：</div>
+                        <div class="showq2">
+                            <span><a target="_blank" href="{$merchant['qq_q']}"><img border="0" style="vertical-align: middle;" src="//pub.idqqimg.com/wpa/images/group.png"></a></span>
+                        </div>
+                    </div>
+                    {/if}
+                    <div class="shangjiagg">
+                        <div class="">商家公告：{if $merchant['store_notice']==null}该商家还没有发出公告{else}{$merchant['store_notice']}{/if}</div>
+                    </div>
+                    <div class="shangjiamc">
+                        <div class="gonggao">视频直播：<span><a href="{$merchant['video']}" target="_blank" style="color: #252525;">{if $merchant['video']==null}该商家没有填写视频地址{else}<img src="/theme/default/img/con-video.png" alt="" style="margin-top: 0px;">{/if}</a></span></div>
+                    </div>
+                    <div class="shangjiamc">
+                        <div class="gonggao">服务时间：{if $merchant['seller_time']==null}该商家还没有设置服务时间{else}{$merchant['seller_time']}{/if}</div>
+                    </div>
+                    <div class="clearit"></div>
+                </div>
+                <div class="fr phone-ma">
+                    <div id="saoma"></div>
+                    <p>可用手机扫描二维码购买</p>
+                </div>
+            </div>
+            <div class="xuanze_t_bg">
+                <div class="shangjia_wenzi">选择商品</div>
+            </div>
+            <div class="clearit"></div>
+            <div class="xzspbox over" style="width: auto;padding-bottom: 16px;">
+                <div class="fl" style="width: 500px;">
+
+
+                    <div class="xzsrk">
+                        <font color="#cf0000">*</font> 商品分类：
+                        <span id="flname">
+        	{if $aaa==null}
+							{$zong['catename']}
+							{else}
+							<select name="cateid" id="cateid" class="spfl">
+								<option>请选择分类</option>
+								{foreach $zong as $v}
+								<option value="{$v.cateid}" >{$v.catename}</option>
+								{/foreach}
+							</select>
+					{/if}
+        </span>
+                        &nbsp;<div class="shuoming" id="flshuoming"></div>
+                    </div>
+                    <div class="clearit"></div>
+
+                    <div class="xzsrk">
+                        <font color="#cf0000">*</font> 商品名称：
+                        <span id="spname">
+        	{if $aaa==1}
+				<select name="goodid" id="selectd" class="spfl">
+					<option >请选择商品</option>
+				</select>&nbsp;&nbsp;<span id="xsbs" style="color: red;font-weight: 600;">未选中状态</span>
+			{else}
+				<select name="goodid" id="selectd" class="spfl">
+                    <option >请选择商品</option>
+					{foreach $commodity as $v}
+					<option value="{$v.goods_id}" >{$v.goods_name}</option>
+					{/foreach}
+				</select>&nbsp;&nbsp;<span id="xsbs" style="color: red;font-weight: 600;">未选中状态</span>
+			{/if}
+        </span>
+                        &nbsp;<div class="shuoming" id="spshuoming" ></div>
+                    </div>
+                    <div class="clearit"></div>
+                    <input type="hidden" name="names" value="{$merchant.uid}" id="shang">
+                    <input type="hidden" value="{$commodity['goods_price']}" id="ratio">
+                    <input type="hidden" value="" id="he"/>
+                    <input type="hidden" value="{$zong.cateid}" id="goodis"/>
+                    <input type="hidden" name="price" id="price" value="">
+                    <input type="hidden" name="sid" value="" id="ping">
+                    <div class="xzsrk"><font color="#cf0000">*</font> 商品价格：&nbsp;<span style="color:#cf0000" id="jiag"></span>元</div>
+                    <div class="clearit"></div>
+                    <div class="xzsrk"  style="height: auto;"><font color="#cf0000">*</font>购卡说明：&nbsp;<span id="shuoming">未选中状态</span></div>
+                    <div class="clearit"></div>
+                    <div class="xzsrk">
+                        <font color="#cf0000">*</font> 购买数量：
+                        <input type="text" name="num" value="" id="buy_money"  onkeyup="value=value.replace(/[^\d]/g,'')" class="xzspsrk1 xxsr_wb">
+                        <span class="col666" id="num" style="vertical-align: middle;" ></span>
+                        <div class="xzspbz1" id="c_kucunshow1"><span id="s_kucunshow1"></span> <span id="s_xiangou"></span></div>
+                        <div class="xzspbzpf" id="kucunshow2" style="display:none"><span id="s_kucunshow2"></span>   <span id="s_pifa"></span></div>
+                    </div>
+                    <div class="clearit"></div>
+
+                    <div class="xzsrk" style="height: auto;">
+                        <font color="#cf0000">*</font> 联系方式：
+                        {if $users['mobile']==null}
+                        <input type="text" name="phone" id="phone" class="xxsr_wb" placeholder="请输入联系方式"> <br><span class="red">*</span> <span>联系方式为任意字符</span> <span class="red">订单查询重要凭证</span>
+                        {else}
+                        <input type="text" name="phone" id="phone" value="{$users['mobile']}" class="xxsr_wb"> <br><span class="red">*</span><span>默认用户自己的联系方式，可更改</span> <span class="red">订单查询重要凭证</span>
+                        {/if}
+
+                    </div>
+                    <div class="clearit"></div>
+                    <div class="xzsrk" style="height: auto;">
+                        <font color="#fff">*</font> 接收邮箱：
+                        {if $users['email']==null}
+                        <input type="text" name="email" id="email" class="xxsr_wb" placeholder="请输入接受邮箱"> <br><span class="red">*</span><span>请填写您的邮箱账号</span>&nbsp;<span>支付成功后,将<span class="red">卡密发送到此邮箱</span>,如不需要请留空</span>
+                        {else}
+                        <input type="text" name="email" id="email" class="xxsr_wb" value="{$users['email']}" value=""><br> <span class="red">*</span><span>默认个人邮箱，可更改</span>&nbsp;<span>支付成功后,将<span class="red">卡密发送到此邮箱</span>,如不需要请留空</span>
+                        {/if}
+
+                    </div>
+                    <div class="clearit"></div>
+                    <div class="xzsrk2">
+                        <input name="duanxin" type="checkbox" value="1" id="duanxin"/>&nbsp;&nbsp;<label for="istelka" onClick="jisuan()" style="cursor:pointer">短信接收卡密(0.1元，联系方式请填写手机号)。</label>
+                        <span style="font-size:13px;color:#06C;"></span>
+                    </div>
+                    <div class="clearit"></div>
+                </div>
+                <div class="ad-wrap fr" style="margin-top: 40px;">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="{$advertising4.url}"><img src="{$advertising4.img}" alt=""><p>广告</p></a></div>
+                            <div class="swiper-slide"><a href="{$advertising5.url}"><img src="{$advertising5.img}" alt=""><p>广告</p></a></div>
+                            <div class="swiper-slide"><a href="{$advertising6.url}"><img src="{$advertising6.img}" alt=""><p>广告</p></a></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearit"></div>
+    <!-- 上部分 结束 -->
+    <!-- 付款方式 开始 -->
+    <div class="xxsmbox center" style="width: 1200px;">
+
+        <div class="wyzf center" style="width: 100%;">
+            <div id="tabs">
+                <div class="xx_box mt20">
+                    <dl class="fstj_box over" style="width: 100%;">
+                        <dt>需支付：</dt>
+                        <dd style="margin-left: 0;width: 300px;" class="fl"><span class="red font20" id="bz"></span>元</dd>
+                    </dl>
+                    <dl class="fstj_box mt15">
+                        <dt>支付方式：</dt>
+                        <div class="pay-wrap">
+                            <ul class="pay-way over" id="topayway">
+                                <!--<li class="hover">余额支付</li>-->
+                                {foreach $tongdao as $v}
+                                <li>{$v.aisle_name}</li>
+                                {/foreach}
+                            </ul>
+                            <div class="pay" id="shina" style="border-bottom: 0;">
+                                {foreach $jietong as $k=>$v}
+                                <div class="zfxz_box">
+                                    {foreach $v as $ke=>$c}
+                                    <input type="radio" id="radio-{$k}-{$ke}" data="{$c.aisle_id}-{$c.port_id}" value="{$c.aisle_id}" name="types" class="regular-radio regulars-radios" />
+                                    <label for="radio-{$k}-{$ke}" class="paypay"><span class="zffs_box"><img src="{$c.img}" title="{$c.ports_name}" width="100" height="33" style="margin-top: 25px;"></span></label>
+
+                                    {/foreach}
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </dl>
+                    <div class="c-wrap">
+                        <h3 class="phone-title" style="margin-bottom: 16px;">
+                            充卡数量：
+                            <select name="" class="spfl w160 mr15" style="height: 32px;line-height: 32px;margin: 0;" id="ka_num">
+                                <option value="">请选择充卡数量</option>
+                                <option value="1">1张卡</option>
+                                <option value="2">2张卡</option>
+                                <option value="3">3张卡</option>
+                                <option value="4">4张卡</option>
+                                <option value="5">5张卡</option>
+                                <option value="6">6张卡</option>
+                                <option value="7">7张卡</option>
+                                <option value="9">8张卡</option>
+                                <option value="8">9张卡</option>
+                                <option value="9">10张卡</option>
+                            </select>
+                        </h3>
+                        <ul class="phone-title" id="phone_wrap">
+
+                        </ul>
+                    </div>
+
+                    <div class="zfcz_box">
+                        <dt></dt>
+                        <dl class="fstj_box mt15">
+                            <dt>使用优惠券</dt>
+                            <dd>
+                                <input type="text" name="yhqs" class="xxsr_wb" placeholder="请输入优惠码">
+                            </dd>
+                            <div class="clear"></div>
+                        </dl>
+                        <dl class="fstj_box mt15">
+                            <dt><input type="button" id="form_cz" value="支付" class="zf_an"></dt>
+                            <dd><input type="checkbox" name="ty"  value="1" id="checkbox-1-2" style="margin: -3px 0 0;" />同意接受 <a href="#" class="col108e">畅享发卡免责声明</a></dd>
+                            <div class="clear"></div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="clearit"></div>
+            </div>
+
+        </div>
+        <div class="clearit"></div>
+    </div>
+</form>
+<div class="clearit"></div>
+
+<!-- 付款方式 结束   -->
+<div class="psw-alert centers once-price" style="padding-bottom:20px;">
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">确认支付</span><i class="fr ma-close"></i></div>
+    <div class="over mar28">
+        <ul class="fl shop-list">
+            <li><span>商品名称：</span><span class="col-739DF3"></span></li>
+            <li><span>订单号：</span><span id="ord"></span></li>
+            <li><span>支付金额：</span><span class="col-D0021B"></span></li>
+            <li><span>支付方式：</span><span class="zffss"></span></li>
+        </ul>
+        <input type="hidden" class="ids" value="">
+        <div class="fr">
+            <div class="ma mb10" id="qrcode"></div>
+            <p class="ma-txt">扫一扫 完成付款</p>
+        </div>
+    </div>
+</div>
+<p class="ceng"></p>
+<!--设置支付密码-->
+<!--tgp免责声明-->
+<div class="psw-alert centers mzsm mian" style="padding-bottom:20px;">
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">免责声明</span><i class="fr ma-close"></i></div>
+    <div class="ze-content" id="inner-content">
+        <p>本网站在国家相关法律法规规定的范围内，只按现有状况提供软件注册码在线交易第三方网络平台服务，本网站及其所有者非交易一方，也非交易任何一方之代理人或代表;同时， 本网站及其所有者也未授权任何人代表或代理本网站及其所有者从事任何网络交易行为或做出任何承诺、保证或其他类似行为，除非有明确的书面授权。</p>
+        <p> 鉴于互联网及网络交易的特殊性，本网站无法鉴别和判断相关交易各主体之民事权利和行为能力、资质、信用等状况，也无法鉴别和判断虚拟交易或正在交易或已交易虚拟物品来源 、权属、真伪、性能、规格、质量、数量等权利属性、自然属性及其他各种状况。因此，交易各方在交易前应加以仔细辨明，并慎重考虑和评估交易可能产生的各项风险。</p>
+        <p>本网站不希望出现任何因虚拟物品交易而在用户之间及用户与游戏开发运营商之间产生纠纷，但并不保证不发生该类纠纷。对于因前述各类情形而产生的任何纠纷，将由交易各方依 据中华人民共和国现行的有关法律通过适当的方式直接加以解决，本网站及其所有者不参与其中；对于因此类交易而产生的各类纠纷之任何责任和后果，由交易各方承担，本网站及其所有者不承担任何责任及后果。</p>
+        <p>本网站不希望出现任何人利用本网站或因使用本网站而侵犯他人合法权益的行为，但并不保证不会发生此类行为或类似行为。本网站将依据中国法律采取必要的措施防止发生前述各类行为或降低发生这类行为的可能性或者降低由此造成的损失及其后果。对于因前述各类情形而产生的任何纠纷，将由权利受到侵害之人和侵权方依据中华人民共和国现行的有关法律通过适当的方式直接加以 解决，本网站及其所有者不参与其中；对于因此类行为产生的各类纠纷之任何责任和后果，由相关责任方承担，本网站及其所有者不承担任何责任及后果。</p>
+        <p>凡有客户投诉涉及不正常交易或疑似诈骗的帐户，公司有权冻结相应帐户。请相应帐户持有人于冻结之日起30日内提供相应证明材料证明交易的真实性或投诉不属实。在相应时间内 未提供材料或材料审核未通过的，公司有权进行帐户相应款项退回处理。</p>
+        <p>任何非本网站责任而产生的任何其他纠纷，概由纠纷各方依据中国相关法律以适当的方式直接加以解决，本网站不参与其中；对于因该类行为产生的各类纠纷之任何责任和后果，由相关各方承担，本网站及其所有者不承担任何责任及后果。</p>
+    </div>
+    <div class="psw-zoom over fr" style="margin-right: 40px;margin-top: 16px;margin-bottom: 0;"><input type="button" value="同意" class="qd-btn que"></div>
+    <div class="psw-zoom over fr" style="margin-right: 40px;margin-top: 16px;margin-bottom: 0;"><input type="button" value="拒绝" class="qd-btn refuse"></div>
+</div>
+<!--余额支付-->
+<div class="balance-payment-wrap psw-alert center" >
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">余额支付</span><i class="fr balance-close"></i></div>
+    <div class="balance-payment-text">
+        <ul class="mar28">
+            <li class="balance-item"><span>商品名称：</span><span id="spm"</span></li>
+            <li class="balance-item"><span>&nbsp;&nbsp;&nbsp;订单号：</span><span id="ddh"></span></li>
+            <li class="balance-item"><span>支付金额：</span><span id="je" style="color: red;"></span><span>元</span></li>
+            <li class="balance-item"><span>支付方式：</span><span>余额支付</span></li>
+            <li class="balance-item"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 余额：</span><span id="ye" style="color: ord;"></span><span>元</span></li>
+        </ul>
+        <a href="{:url('kami/pay_password')}"><div class="ok-and-cancel">确定</div></a>
+    </div>
+</div>
+</body>
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/jquery.slimscroll.min.js"></script>
+<script src="./js/swiper.min.js"></script>
+<script type="text/javascript">
+    $(".balance-close,.ok-and-cancel").click(function(){
+        $(".balance-payment-wrap").hide()
+        $(".ceng").hide()
+    })
+
+    $(function(){
+        $("#topayway li:first-child").addClass("on")
+        $('#shina div:first-child').addClass('active1')
+    });
+
+
+    $('.paypay').click(function(){
+        $('.paypay').css({'border':'none','border-radius':'2px'});
+        if($('.regular-radio').is(':checked')==true){
+            $(this).css({'border':'1px solid #108ee9','border-radius':'2px'});
+        }
+    });
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 15,
+        hashnav: true,
+        speed: 2000,
+        loop: true,
+        observer:true,
+        observeParents:true,
+        autoplayDisableOnInteraction : false,
+        autoplay:1500
+    });
+    $('.pay-way li').click(function(){
+        $(this).addClass('hover').siblings('li').removeClass('hover');
+        $('.zfxz_box').eq($(this).index()).addClass('active1').siblings('div').removeClass('active1');
+    });
+    jQuery(document).ready(function ($) {
+        $("#inner-content").slimScroll({
+            height: '300px'
+        });
+    });
+    /* $('.que,.refuse').click(function(){
+         alert("关闭");
+         $('.ceng').hide();
+         $('.mian').hide();
+     });*/
+
+    $('.que').click(function(){
+        $('.ceng').removeClass('active1');
+        $('.psw-alert').hide();
+        $('#checkbox-1-2').attr('checked',true);
+    });
+    //点击拒绝勾选协议
+    $('.refuse').click(function(){
+        $('.ceng').removeClass('active1');
+        $('.psw-alert').removeClass('active1');
+        $('#checkbox-1-2').attr('checked',false);
+    });
+</script>
+<script>
+    $('.c-wrap').hide();
+    $('.pay-way li').click(function(){
+        $('.c-wrap').hide();
+    });
+
+    $("ul.pay-way li").click(function(){
+        if($(this).text()=='充值卡'){
+            $('.c-wrap').show();
+        }
+    });
+
+    $('#ka_num').change(function () {
+        $('#phone_wrap li').remove();
+        for (var i = 1; i <= parseInt($(this).val()); i++) {
+            $('#phone_wrap').append('<li><ol class="phones">' +
+                '<li>点卡面值：<select  name="seller_money" class="spfl w160 mr15" style="height:32px;line-height:32px;margin:0;"><option ="99">请选择点卡面值</option><option value="10">10元</option><option value="15">15元</option><option value="30">30元</option><option value="50">50元</option><option value="100">100元</option></select></li><li>充值卡号：<input type="text"  name="pay"  placeholder=""></li><li>充值卡密：<input type="text" name="pay_password" placeholder=""></li></ol></li>');
+        }
+    })
+
+    $(function () {
+
+        $('#form').submit(function () {
+            var form = $('#form');
+            $.post(form.attr("action"), form.serialize(), function (data) {
+                if (data.code == 1) {
+                    window.location.href = data.url;
+                    alert('提交成功');
+                } else {
+                    alert(data.msg);
+                }
+            }, "json");
+            return false;
+        });
+
+    });
+
+    $(function(){
+
+        $('#buy_money').keyup(function () {
+            var num = $(this).val();
+            //var add = $('#number').val();
+            var sin = $('#selectd').val();
+            var dj = $('#jiag').html();
+            var znum = $('#he').val();
+            if (num < 1) {
+                alert('购买数量最小为1');
+                return false;
+            }
+            if ( Number(num) >  Number(znum)) {
+                alert('数量必须小于等于' + znum);
+                return false;
+            }
+            $.ajax({
+                type:'post',
+                url:"{:url('kami/yhjg')}",
+                data:{sin:sin,num:num},
+                success:function(data){
+                    if(data.data=='y'){
+                        var price = num*dj;
+                        $('#bz').html(price);
+                        $('#price').val(price);
+                        return true;
+                    }
+                    if(data.data=='x'){
+                        $('#jiag').html(data.a);
+                        var price = num*data.a;
+                        $('#bz').html(price);
+                        $('#price').val(price);
+                        return true;
+                    }
+                }
+            })
+        });
+
+    });
+    var timer;
+    //提交卡密订单支付页面
+    $(function(){
+        $('.zf_an').click(function(){
+            var sin = $("input[type='radio']:checked").attr("data");
+            if($('#checkbox-1-2').is(':checked')){
+                var ty = $('#checkbox-1-2').val();
+            }
+            if(ty==null){
+                $('.ceng').addClass('active1');
+                $('.mzsm').show();
+                return false;
+            }
+            $.ajax({
+                type:'post',
+                url:"{:url('kami/judge')}",
+                data:{sin:sin},
+                success:function(data){
+                    if(data.data==1){
+                        var name = $('#shang').val();
+                        var price = $('#price').val();
+                        var sid = $('#ping').val();
+                        var num = $('#buy_money').val();
+                        var phone = $('#phone').val();
+                        var email = $('#email').val();
+                        if($('#duanxin').is(':checked')){
+                            var duanxin = $('#duanxin').val();
+                        }
+                        if($('#checkbox-1-2').is(':checked')){
+                            var ty = $('#checkbox-1-2').val();
+                        }
+                        if(price == null){
+                            alert("金额错误");
+                            return false;
+                        }
+                        if(num == null){
+                            alert("请输入购买数量");
+                            return false;
+                        }
+                        if(phone == null){
+                            alert("请输入电话");
+                            return false;
+                        }
+                        if(email == null){
+                            alert("请输入邮箱地址");
+                            return false;
+                        }
+                        if(ty == null){
+                            alert("请同意接受免责声明");
+                            return false;
+                        }
+                        $.ajax({
+                            type:'post',
+                            url:"{:url('kami/qqsm')}",
+                            data:{sin:sin,name:name,price:price,sid:sid,num:num,phone:phone,email:email,duanxin:duanxin,ty:ty},
+                            success:function(data){
+                                if(data.sinss == 99){
+                                    $('#spm').html(data.title);
+                                    $('#ddh').html(data.order_id);
+                                    $('#je').html(data.money);
+                                    $('#ye').html(data.ye);
+                                    $(".balance-payment-wrap").show();
+                                    $(".ceng").show()
+                                    return false;
+                                }
+                                if(data.msg!=null){
+                                    alert(data.msg);
+                                }else{
+                                    if(data.url.result == null){
+                                        alert('该接口错误,请刷新页面在试试,或选择其他接口');
+                                        window.location.reload();
+                                        return false;
+                                    }
+                                    $('.ceng').addClass('active1');
+                                    $('.once-price').addClass('active1');
+                                    $('.col-739DF3').html(data.title);
+                                    $('#ord').html(data.order_id);
+                                    $('.col-D0021B').html(data.money);
+                                    var id = data.id;
+                                    $('.zffss').html('扫码支付');
+                                    makeCode(data.url.result);
+                                    timer=setInterval( function getCode(){
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "{:url('kami/wx')}",
+                                            data: {id:id},
+                                            success: function(data){
+                                                if(data.data == 2){
+                                                    window.location.href="{:url('home/kami/pay_suss')}"+"?id="+id;
+                                                }
+                                            }
+                                        });
+                                    },3000);
+                                }
+                            }
+                        });
+                    }
+                    if(data.data==2){
+                        $('#form').submit();
+                    }
+                    if(data.data==3){
+                        alert('请选择支付方式');
+                    }
+                    if (data.data==7){
+                        var name = $('#shang').val();
+                        var price = $('#price').val();
+                        var sid = $('#ping').val();
+                        var num = $('#buy_money').val();
+                        var phone = $('#phone').val();
+                        var email = $('#email').val();
+                        var ka_num = $('#ka_num').val();
+
+                        var a='';
+                        $("select[name='seller_money']").each(function(){
+                            a+=$(this).val()+',';
+                        });
+
+                        var pay =[];
+                        $("input[name='pay']").each(function(){
+                            pay.push($(this).val());
+                        })
+                        var b = pay.join("-");
+
+                        var pay_password =[];
+                        $("input[name='pay_password']").each(function(){
+                            pay_password.push($(this).val());
+                        })
+                        var c = pay_password.join("-");
+
+                        if($('#duanxin').is(':checked')){
+                            var duanxin = $('#duanxin').val();
+                        }
+                        if($('#checkbox-1-2').is(':checked')){
+                            var ty = $('#checkbox-1-2').val();
+                        }
+                        $.ajax({
+                            type:'post',
+                            url:"{:url('kami/link')}",
+                            data:{sin:sin,name:name,price:price,sid:sid,num:num,ka_num:ka_num,phone:phone,email:email,duanxin:duanxin,ty:ty,seller_money:a,pay:b,pay_password:c},
+                            success:function(data){
+                                if(data.msg!=null){
+                                    alert(data.msg);
+                                }else{
+                                    timer=setInterval( function getCode(){
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "{:url('kami/wx')}",
+                                            data: {id:id},
+                                            success: function(data){
+                                                if(data.data == 2){
+                                                    window.location.href="{:url('home/kami/pay_suss')}"+"?id="+id;
+                                                }
+                                            }
+                                        });
+                                    },3000);
+                                }
+                            }
+                        })
+                    }
+
+                }
+            })
+        })
+    })
+
+
+
+    $(function(){
+        $('#saoma').attr('title','');
+        $('#qrcode').attr('title','');
+        $('#cateid').click(function(){
+            var qq = $(this).val();
+            $.ajax({
+                type:"post",
+                url:"{:url('home/kami/sinass')}",
+                data:{qq:qq},
+                dataType: "json",
+                success:function(data){
+                    var html;
+                    if(data.data==null){
+                        html = "<option>该分类还没有添加商品</option>";
+                        $('#selectd').html(html);
+                    }else{
+                        html = "<option>请选择商品</option>";
+                        $.each(data.data,function(key,val){
+                            html += "<option value=\""+val.goods_id+"\">"+val.goods_name+"</option>";
+                        })
+                        $('#selectd').html(html);
+                    }
+
+                },
+            })
+        })
+    })
+
+    $(function(){
+        $('#selectd').click(function(){
+            var qq = $('#selectd').val();
+            var sul = $('#buy_money').val();
+            var qj = {$merchant['bi']};
+            if (qq =='请选择'){
+                num = '未选择商品分类';
+                $('#num').html(num);
+                return false;
+            }
+            if(qq=='请选择商品'){return false;}
+            //alert(qq);
+            $.ajax({
+                type:"post",
+                url:"{:url('home/kami/sina')}",
+                data:{qq:qq},
+                success:function(data){
+                    var html;
+                    var num;
+                    var abc;
+                    num = '至多购买'+data.data.num+'张';
+                    html = data.data.goods_price;
+                    $('#jiag').html(html);
+                    $('#shuoming').html(data.data.explain);
+                    $('.shuomings').remove();
+                    $('#num').html(data.data.nums);
+                    ssmoney = sul*html;
+                    if(qj==2){
+                        abc = '共销售'+data.data.xsbs+'笔'
+                        $('#xsbs').html(abc);
+                    }else{
+                        abc = '';
+                        $('#xsbs').html(abc);
+                    }
+                    $('#he').val(data.data.num);
+                    //$('#shang').val(data.data.uid)
+                    $('#ping').val(data.data.goods_id);
+                    if(data.data.coupon == null){
+                        $('#coupon').hide();
+                    }else {
+                        $('#coupon').show();
+                    }
+                }
+            })
+        })
+    })
+    $('.col108e').click(function(){
+        $('.ceng').addClass('active1');
+        $('.mzsm').show();
+    });
+    $('.ma-close').click(function(){
+        clearInterval(timer);
+        $('.ceng').removeClass('active1');
+        $('.once-price').removeClass('active1');
+        $('.youx').removeClass('active1');
+        $('.mzsm').hide();
+        javascript:location.reload();
+    });
+    $('.qu').click(function(){
+        clearInterval(timer);
+        $('.ceng').removeClass('active1');
+        $('.once-price').removeClass('active1');
+        $('.mzsm').hide();
+    });
+
+</script>
+<script type="text/javascript" src="./js/qrcode.min.js"></script>
+<script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 150,
+        height : 150
+    });
+    function makeCode (url) {
+        qrcode.makeCode(url);
+    }
+    var saoma = new QRCode(document.getElementById("saoma"), {
+        width : 140,
+        height : 140
+    });
+    var ul = 'http://www.cxka.com/home/kami/pay_phone/sjtg/'+{$merchant['uid']}+'.html';
+    function makesd(url){
+        saoma.makeCode(url);
+    }
+    makesd(ul);
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <style>
+        .select-area{
+            position: relative;
+            overflow: hidden;
+        }
+        .select-area select{
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="select-area">
+    <span class="select-value"></span>
+    <select>
+        <option>甘肃</option>
+        <option>兰州</option>
+    </select>
+</div>
+
+
+</body>
+<script src="../js/jquery-2.1.4.min.js"></script>
+<script>
+    $(".select-area .select-value").each(function(){
+        if( $(this).next("select").find("option:selected").length != 0 ){
+            $(this).text( $(this).next("select").find("option:selected").text() );
+        }
+    });
+    $(".select-area select").change(function(){
+        var value = $(this).find("option:selected").text();
+        $(this).parent(".select-area").find(".select-value").text(value);
+    });
+</script>
+</html>

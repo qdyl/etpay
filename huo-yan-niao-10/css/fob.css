@@ -1,0 +1,147 @@
+html {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  background: #ff5028;
+}
+html body .header {
+  width: 100%;
+  height: 100%;
+}
+html body .welfare-wrap .first-welfare-title {
+  margin: 0.22rem auto 0.74rem;
+  width: 80%;
+  height: 0.52rem;
+}
+html body .welfare-wrap .first-welfare-title .title {
+  top: 0.1rem;
+  left: 0.5rem;
+  font-size: 0.16rem;
+  color: #FE5B1F;
+  font-weight: 600;
+}
+html body .welfare-wrap .first-welfare-text {
+  border-radius: 0.08rem;
+  color: #fff;
+  font-size: 0.14rem;
+  margin: 0 auto;
+  width: 91.5%;
+  background: #ff8468;
+}
+html body .welfare-wrap .first-welfare-text .text-top {
+  border-bottom: 0.03rem dotted #fff;
+  padding: 0 0.12rem;
+}
+html body .welfare-wrap .first-welfare-text .text-top .open-source {
+  padding-top: 0.43rem;
+}
+html body .welfare-wrap .first-welfare-text .text-top .open-source .open-sou-l {
+  margin-right: 0.25rem;
+}
+html body .welfare-wrap .first-welfare-text .text-top .open-source .open-sou-l img {
+  width: 0.2rem;
+  height: 0.18rem;
+  margin-right: 0.05rem;
+  vertical-align: middle;
+}
+html body .welfare-wrap .first-welfare-text .text-top .open-source .open-sou-r img {
+  width: 0.17rem;
+  height: 0.16rem;
+  margin-right: 0.05rem;
+  vertical-align: middle;
+}
+html body .welfare-wrap .first-welfare-text .text-top .operation-way {
+  margin: 0.13rem 0;
+}
+html body .welfare-wrap .first-welfare-text .text-top .contract-address {
+  padding-bottom: 0.16rem;
+}
+html body .welfare-wrap .first-welfare-text .text-top .contract-address .fr {
+  line-height: 0.25rem;
+  width: 2.48rem;
+}
+html body .welfare-wrap .first-welfare-text .text-top img {
+  top: -0.42rem;
+  left: 0.32rem;
+  width: 3.84rem;
+  height: 1.54rem;
+}
+html body .welfare-wrap .first-welfare-text .text-down {
+  margin: 0 0.12rem;
+  padding: 0.16rem 0;
+}
+html body .welfare-wrap .first-welfare-text .text-down p {
+  font-size: 0.12rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+html body .fob-effect-wrap .fob-effect-title {
+  margin: 0.22rem auto 0.3rem;
+  width: 80%;
+  height: 0.52rem;
+}
+html body .fob-effect-wrap .fob-effect-title .title {
+  top: 0.1rem;
+  left: 1.1rem;
+  font-size: 0.16rem;
+  color: #FE5B1F;
+  font-weight: 600;
+}
+html body .fob-effect-wrap .fob-effect-text {
+  padding-top: 0.14rem;
+  padding-bottom: 0.01rem;
+  border-radius: 0.08rem;
+  color: #fff;
+  font-size: 0.14rem;
+  margin: 0 auto;
+  width: 91.5%;
+  background: #ff8468;
+}
+html body .fob-effect-wrap .fob-effect-text .fob-effect-item {
+  padding: 0 0.16rem;
+  margin-bottom: 0.17rem;
+}
+html body .fob-effect-wrap .fob-effect-text .fob-effect-item .fob-circle {
+  position: relative;
+  top: 0.03rem;
+  margin-right: 0.14rem;
+  width: 0.16rem;
+  height: 0.16rem;
+  line-height: 0.16rem;
+  border-radius: 50%;
+  background: #fbde2c;
+  color: #FE5B1F;
+  font-size: 0.12rem;
+  text-align: center;
+  vertical-align: top;
+}
+html body .fob-effect-wrap .fob-effect-text .fob-effect-item .item-text {
+  display: inline-block;
+  width: 2.8rem;
+}
+html body .fob-effect-wrap .careful-wrap {
+  border-radius: 0.08rem;
+  color: #fff;
+  font-size: 0.14rem;
+  margin: 0.24rem auto 0.34rem;
+  width: 91.5%;
+  background: #ff8468;
+}
+html body .fob-effect-wrap .careful-wrap .careful {
+  padding: 0.16rem 0.16rem;
+}
+html body .fob-effect-wrap .careful-wrap .careful .title {
+  margin-bottom: 0.07rem;
+}
+html body .fob-effect-wrap .careful-wrap .careful .text {
+  line-height: 0.26rem;
+}
+html body .fob-effect-wrap .careful-wrap .now-test {
+  padding: 0.16rem 0.16rem;
+  border-top: 0.01rem dotted #fff;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.12rem;
+}

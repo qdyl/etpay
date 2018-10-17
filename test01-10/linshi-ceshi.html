@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <title>火烈鸟</title>
+
+
+</head>
+<body>
+<div class="has-topbar header">
+    @*location.href = '/Purse/PurseShow';*@
+    <i class="back" onclick="location.href = '/Purse/PurseShow';"></i>
+    <span id="curr1">@ViewBag.curr</span>钱包
+</div>
+<div class="h44"></div>
+
+<input id="Htotal_amount" type="hidden" value="@ViewBag.FOB_asset.Available_Amount">
+<div class="bi-detail">
+    <div class="active" id="active">
+        <section class="bg-fff pad-lr10 mb10">
+            <h3 class="over tian-title"><i class="fl" ></i><span class="fl" id="zhicang">@ViewBag.curr</span><span class="fl">资产</span><span class="fr col-EF7A12" id="total_amount">@string.Format("{0:f}", ViewBag.FOB_asset.Available_Amount)</span></h3>
+
+            <ul class="fa-tab over">
+                <li class="hover" name="chongbi">充币<span id="curr2">@ViewBag.curr</span></li>
+                <li name="tibi">提币<span id="curr3">@ViewBag.curr</span></li>
+            </ul>
+            <div class="fob">
+                <div class="hua-msg active">
+                    <div class="msg">
+                        <p class="col-666 mb16">向如下地址汇入<span id="curr4">@ViewBag.curr</span>完成充值</p>
+                        <p class="col-EF7A12 mb8">
+
+                            <input class="col-333 mb12" id="url" readonly="readonly" value="@item.address">
+
+                        </p>
+                    </div>
+                    <div class="copy over"><input type="button" value="一键复制" onclick="copy33()"   @*onClick="    $('#url').select();document.execCommand('Copy')"*@><input type="button" value="查看二维码" onclick="    window.location.href='/Purse/QRCode?curr='+$('#curr2').html()"></div>
+                </div>
+                <div>
+                    <ul class="fa-list">
+                        <li><span>发送地址</span><input type="text"   placeholder="请输入地址" id="address">@*<i onclick="Scanning()"></i>*@</li>
+                        <li><span>发送数量</span><input type="text" id="num"></li>
+                        <li><span>手续费</span><input type="text" placeholder="0.00" id="sxf" readonly="readonly"><i style="display: inline-block;vertical-align: middle;width: 1.2rem;height: 1.2rem;background: url('../images/ac.png') no-repeat center/1.2rem 1.2rem;margin-left: .4rem;margin-bottom: .4rem;" @*onclick="layer.open({content: '手续费费率为发送数量的2%', btn: '确认'});"*@></i></li>
+                        <li><span>实际到账</span><input type="text" placeholder="0.00" id="xjdz" readonly="readonly"><i style="display: inline-block;vertical-align: middle;width: 1.2rem;height: 1.2rem;background: url('../images/ac.png') no-repeat center/1.2rem 1.2rem;margin-left: .4rem;margin-bottom: .4rem;" @*onclick="layer.open({content: '发送金额减去手续费', btn: '确认'});"*@></i></li>
+
+                        <li style="padding: 1.6rem 0;border-bottom: 0;">
+
+                            <input type="button" value="确认发币" class="hua-btn" onclick="submit()" id="btnsd">
+
+                            <input type="button" value="确认发币" class="hua-btn" id="btnsd">
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <div class="pad-lr10 bg-fff">
+            <h3 class="over chu-tile"><span class="col-333">正在处理中的转账</span><i></i><a href="/Purse/PurseDetail" class="col-CF138C fr">更多</a></h3>
+            @if (ViewBag.Detail != null)
+            {
+            var count = 0;
+            foreach (var item in ViewBag.Detail)
+            {
+            if (count <= 2)
+            {
+
+
+            <ul class="order bor-bot">
+                <li><span>单号</span>@item.Order_Number</li>
+                <li><span>转账时间</span>@item.Transaction_Time</li>
+                <li><span>金额</span>@item.Transaction_Money</li>
+                <li><span>交易模式</span>@item.Transaction_Model</li>
+                <li><span>手续费</span>@item.poundage</li>
+                @*<li><span>到账时间</span>@ViewBag.Detail.Arrive_Time</li>*@
+            </ul>
+            }
+            count++;
+            }
+            }
+        </div>
+        <p class="ceng"></p>
+        <div class="change-alert center over" style="background: #F1F5F8;">
+            <h3 class="titles mb16">请输入交易密码<i class="close-que"></i></h3>
+            <ul class="change-psw over mm_box">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!--键盘-->
+            <ul class="keyboard over pad-lr10">
+                <li><a href="javascript:void(0);" class="zf_num">1</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">2</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">3</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">4</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">5</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">6</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">7</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">8</a></li>
+                <li><a href="javascript:void(0);" class="zf_num">9</a></li>
+                <li><a href="javascript:void(0);" class="zf_empty" style="font-size: 2rem;">清空</a></li>
+                <li><a href="javascript:void(0);" class="zj_x zf_num">0</a></li>
+                <li><a href="javascript:void(0);" class="zf_del" style="font-size: 4rem;">×</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="address2" value="@ViewBag.address" />
+<input type="hidden" id="curr" value="@ViewBag.Curr" />
+</body>
+</html>
+
+
+<script src="../js/jquery-2.1.4.min.js"></script>
+<script>
+    function copy33() {
+        var input = document.createElement("input");
+        var text = $("#url").val();
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+        alert("复制成功33");
+    }
+</script>
+

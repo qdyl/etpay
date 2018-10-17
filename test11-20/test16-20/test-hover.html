@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        *{padding:0; margin: 0; font-size: 12px;}
+        ul,li{list-style: none;}
+        body{text-align: center;}
+        div{width: 100px; margin: 0 auto;}
+        a{width: 100px; line-height: 40px; background: #eee; border-bottom:1px white solid; text-align: center; display: block;}
+        .hover{background: red;}
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="" class="hover">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+</div>
+<script>
+    $(".nav a").mousemove(function(event) {
+        $(this).addClass('hover').siblings().removeClass('hover');
+    });
+</script>
+</body>
+</html>

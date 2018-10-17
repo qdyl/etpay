@@ -1,0 +1,360 @@
+/********** CSS for Popup Starts ***********/
+.edd-currency-popup-content {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #555555;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 4px 30px #000000;
+    color: #000000;
+    display: none;
+    font: 12px "Lucida Grande",Verdana,Arial,sans-serif;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    min-height: 330px;
+    overflow: auto;
+    position: fixed;
+    text-align: left;
+    top: 15%;
+    max-width: 730px;
+    z-index: 102;
+    overflow: hidden;
+}
+.edd-currency-popup-content .description {
+	margin-left: 0px !important
+}
+.edd-currency-popup-overlay {
+	display: none;
+	background-color: #000000;
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.edd-currency-popup {
+	min-height: 190px;
+	padding: 20px;
+}
+.edd-currency-popup .edd-list-item{
+	width: 208px;
+	border-radius: 3px 3px 3px 3px;
+    font-family: Arial;
+    line-height: 14px;
+    -moz-user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    margin: 1px;
+    padding: 5px;
+    text-align: left;
+}
+
+.edd-currency-popup .edd-currency-code{
+	color:#2865C9;
+	margin-right:20px;
+}
+.edd-currency-popup .edd-list-item:hover{
+	width: 208px;
+	border-radius: 3px 3px 3px 3px;
+    line-height: 14px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    margin: 1px;
+    padding: 5px;
+    background-color: #333333;
+    color:#FFFFFF !important;
+}
+.edd-selected-currency{
+	color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    height: 32px;
+    line-height: 32px;
+    margin: 15px 0px 0px 0px;
+    text-align: left;
+}
+.edd-currency-popup .edd-list-item:hover .edd-currency-code{
+	 color:#FFFFFF !important;
+}
+.edd-currency-header-title {
+    padding: 6px 10px 0;
+}
+.edd-currency-header-title .edd-currency-select-msg{
+	color: #000000;
+    padding: 10px 0 0 20px;
+}
+.edd-select-currency-title{
+	font-size:18px !important;
+	color:#333333 !important;
+	padding: 10px 0 0 20px;
+	margin: 0px;
+	display: inline-block;
+}
+.edd-currency-popup-close {
+ 	float: right;
+ 	padding: 15px 0;
+ 	cursor: pointer;
+}
+.edd-currency-header {
+    background-color: #F5F5F5;
+    color: #CFCFCF;
+    min-height: 80px;
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
+}
+.edd-currency-footer {
+    background-color: #F5F5F5;
+    color: #CFCFCF;
+    min-height: 50px;
+    position: relative;
+    border-top: 1px solid #E5E5E5;
+    padding-bottom: 9px;
+    text-align: right;
+}
+.edd-currency-footer .edd-currency-buttons{
+	display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: top;
+    margin-top:15px;
+}
+div.edd-footer-col{
+	display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+.edd-currency-footer .edd-currency-button-save{
+    border: 1px solid #1D4992;
+    color: #FFFFFF;
+    padding: 7px;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: none;
+    float: none;
+    font-family: Arial;
+    font-weight: bold;
+    text-shadow: none;
+    font-size: 14px;
+    height: 32px;
+    margin: 0;
+    padding: 5px 12px;
+    background: linear-gradient(to bottom, #3079f1 0%,#2865c9 100%,#2865c9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3079f1', endColorstr='#2865c9',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(top, #3079f1 0%,#2865c9 100%,#2865c9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #3079f1 0%,#2865c9 100%,#2865c9 100%); /* Opera 11.10+ */
+    background-color: #3079F1;
+    -webkit-appearance: none;
+}
+.edd-currency-footer .edd-currency-button-save:hover{
+	border: 1px solid #16376f;
+	color: #FFFFFF;
+	background: none repeat scroll 0 0 #2865C9;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1) !important;
+}
+.edd-currency-footer .edd-currency-button-reset{
+	border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #444444;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: none;
+    float: none;
+    font-family: Arial;
+    font-weight: bold;
+    text-shadow: none;
+    font-size: 14px;
+    height: 32px;
+    margin: 0;
+    padding: 5px 12px;
+    background: linear-gradient(to bottom, #FFFFFF 0%,#FBFBFB 100%,#FBFBFB 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FBFBFB',GradientType=0 ); /* IE6-9 */
+    background: -webkit-linear-gradient(top, #FFFFFF 0%,#FBFBFB 100%,#FBFBFB 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #FFFFFF 0%,#FBFBFB 100%,#FBFBFB 100%); /* Opera 11.10+ */
+    background-color: #FFFFFF;
+    -webkit-appearance: none;
+}
+.edd-currency-footer .edd-currency-button-reset:hover{
+	border:1px solid #c6c6c6;
+	color: #222222;
+	background: none repeat scroll 0 0 #FFFFFF;
+	box-shadow:0 1px 1px rgba(0,0,0,0.1) !important;
+}
+.edd-currency-popup table.form-table {
+	margin : 15px !important;
+	width: 95% !important;	
+}
+.edd-select-currency-msg{
+	color: #333333;
+	font-size: 14px;
+	margin-left: 20px;
+    margin-top: 10px;
+}
+.edd-currency-loader {
+	display:none;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.edd-list-item-selected,.edd-list-item-selected .edd-currency-code {
+    background-color: #2865C9;
+    color: #FFFFFF !important;
+}
+/***************** CSS for Popup Ends******************/
+
+.edd-currency-popup-visible {
+    transform: translate(0px, 0px);
+    display: block;
+}
+.edd-currency-bottom-popup {
+    bottom: 0;
+    color: #EEEEEE;
+    font-size: 13px;
+    height: auto;
+    left: 0;
+    padding: 20px 0;
+    position: fixed;
+    text-align: center;
+	width: 100%;
+    z-index: 9999;	
+	background: linear-gradient(to bottom, #686868 0%,#333333 100%,#333333 100%); /* W3C */
+	background: -webkit-linear-gradient(top, #686868 0%,#333333 100%,#333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #686868 0%,#333333 100%,#333333 100%); /* Opera 11.10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#686868', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+	background-color: #333333;
+}
+.edd-popup-save-msg {
+	width: 97%;
+	float: left;
+}
+.edd-currency-save-button, .edd-curr-btn-reset {
+	padding: 2px 5px !important;
+	font-weight: bold !important;
+}
+.edd-currency-close-popup {
+	width: 2%;
+	float: left;
+}
+a.edd-currency-close-popup, a.edd-currency-close-popup:hover {
+	text-decoration: none;
+    color: #FFFFFF;
+    outline: 0;
+}
+.edd-currencies-mb-select{
+	display: none;
+	padding: 4px 2px 0px 2px;
+	min-width: 200px;
+	margin: auto;
+}
+.edd-currencies-mb-select option{
+	padding: 2px;
+}
+/******************* Currency Detection Popup CSS Start **********************/
+.edd-currency-detection-prompt-popup{
+	position:fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	padding: 16px 0px;
+	z-index: 8998;
+	color: #EEE;
+	text-align: center;
+	font-size: 13px;
+	display: none;
+	border-top: 4px solid #515151;
+	background: linear-gradient(to bottom, #686868 0%,#333333 100%,#333333 100%); /* W3C */
+	background: -webkit-linear-gradient(top, #686868 0%,#333333 100%,#333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #686868 0%,#333333 100%,#333333 100%); /* Opera 11.10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#686868', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+	background-color: #333;
+}
+.edd-currency-detection-popup-msg-wrap{
+	display: block;
+	vertical-align: top;
+	font-size: 14px;
+	margin: 0px 70px;
+	line-height: 20px;
+}
+.edd-currency-detection-popup-msg{
+	font-weight:bold;
+}
+.edd-currency-detected-buttons{
+	display:inline-block;
+	vertical-align:top;
+	margin-right:10px;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+.edd-currency-detect-button{
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 5px;
+	padding: 6px 11px 5px 11px;
+	min-width: 70px;
+	border:1px solid #000;
+	background: #666666;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 0px rgba(0,0,0,0.7);
+}
+.edd-currency-detect-button:hover{
+	color:#FFF;
+	background:#000;
+	-webkit-box-shadow:0 0 3px 0 rgba(0,0,0,0.7);
+	-moz-box-shadow:0 0 3px 0 rgba(0,0,0,0.7);
+	box-shadow:0 0 3px 0 rgba(0,0,0,0.7)
+}
+.edd-currency-detect-button:active{	
+	color:#333;
+	background:#000;
+	-webkit-box-shadow:0 0 3px 0 rgba(0,0,0,0.7);
+	-moz-box-shadow:0 0 3px 0 rgba(0,0,0,0.7);
+	box-shadow:0 0 3px 0 rgba(0,0,0,0.7)
+}
+.edd-currency-select-msg{
+	padding:10px;
+	margin-bottom:10px;
+	font-size:12px;
+	font-weight:normal;
+	line-height: 20px;
+}
+.edd-currency-dection-close, .edd-currency-msg-close {
+	float: right;
+	margin-right: 25px;
+}
+.edd-currency-detection-popup-visible{
+	display: block;
+}
+/******************* Currency Detection Popup CSS End **********************/
+
+/*--- For Popup Media Css Starts ---*/
+@media only screen and (max-width: 769px) {
+	.edd-currency-popup-content{
+		margin: 0 10px;
+		position: absolute;
+	}
+	.edd-currency-popup{
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.edd-currency-popup-content{
+		position: fixed;
+	}
+	.edd-currency-popup-content, .edd-currency-popup{
+		min-height: 0;
+	}
+	.edd-currencies-mb-select{
+		display: block;
+	}
+	.edd-currency-popup .edd-currency-lists{
+		display: none;
+	}
+	div.edd-footer-col{
+		 width: auto;
+	}
+	.edd-popup-save-msg {
+		width: 88%;
+	}
+}
+/*--- For Popup Media Css Ends ---*/

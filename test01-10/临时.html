@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>畅享发卡,TGP自动发卡平台,诚信发卡平台-平台商家会员商品详情</title>
+    <meta name="keywords" content="自动发卡平台,自动发卡网,卡密在线交易平台,畅享发卡,TGP自动发卡平台,诚信发卡平台,网游在线充值" />
+    <meta name="description" content="本程序原TGP自动发卡平台升级而成,畅享发卡平台,综合网游点卡在线充值,网络游戏账号装备交易担保平台" />
+    <link rel="shortcut icon" href="/theme/bitbug_favicon.ico" />
+    <link rel="stylesheet" href="/theme/default/pay/pay2/css/animate.css">
+    <link rel="stylesheet" href="/theme/default/pay/pay2/css/icomoon.css">
+    <link rel="stylesheet" href="/theme/default/pay/pay2/css/style.css">
+    <link rel="stylesheet" href="/theme/default/pay/pay2/css/bootstrap.css">
+    <link rel="stylesheet" href="/theme/default/pay/pay2/css/flexslider.css">
+    <!--  <link rel="stylesheet" type="text/css" href="/theme/default/css/swiper.min.css">-->
+    <link rel="stylesheet" type="text/css" href="/theme/default/css/slick.css">
+
+    <script src="/theme/default/pay/pay2/js/modernizr-2.6.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/theme/default/pay/pay2/css/ie80.css" /> <![endif]-->
+    <style>
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .left_n p {
+            margin: 13px 0;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+        select#cateid,select#selectd{
+            width:55%;
+        }
+        header{height: 100px;}
+        header>ul{font-size:12px;line-height: 100px;}
+        header>ul>li{float: left;font-family: PingFangSC-Regular;font-weight: normal;font-stretch: normal;  }
+        header>ul>li:nth-child(1){letter-spacing: 0px;color: #fff;margin-right:18px;}
+        header>ul>li:nth-child(2) a{color: #2591ff;}
+        header>ul>li:nth-child(2){color: #2591ff;}
+        div.phone-ma{width:auto}
+        span#num{color:#18cc11;}
+        .add-business-icon{
+            margin-left: -5px;
+        }
+        .add-business-icon>img{  margin:0 8px;  width:25px;  height:25px;  }
+        /*.zfxz_box.active1{padding-left:80px;}*/
+        label.paypay {  margin: 0;  }
+        #form #fh5co-aside{width:23%;}
+        #form #fh5co-main{width:77%;}
+        #form .left_n{width:auto;margin-left:18px;}
+        #fh5co-aside .left_n>p{font-size:17px;}
+        header.fr{margin-right:50px;}
+        header ul li {  font-size: 15px;  }
+        .over.mar28 p.ma-txt {  text-align: center; margin-top: 5px;}
+        /*余额*/
+        .balance-payment-wrap.psw-alert.center{position: fixed;top:50%;left:50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            -o-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        .balance-payment-text li {  margin-bottom: 17px;  }
+        .ok-and-cancel {  letter-spacing: 1px;  border-radius: 5px;  margin: 0 auto 20px;  width: 150px;  height: 40px;  line-height: 40px;  text-align: center;  color: #fff;  background: #108ee9;  font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="fh5co-page">
+    <form id="form" method="post" action="/home/kami/pay_order.html" >
+        <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+            <div class="logo"><a href="/"><img src="/theme/default/img/logo.png"> </a></div>
+            <div class="left_n">
+                <h1>商户信息</h1>
+                <p>商家名称: 小猪佩奇</p>
+                <div class="add-business-icon">
+                    <img src="/theme/default/img/shenf2.png" title="未实名认证"/>
+                    <img src="/theme/default/img/baozhenj2.png" title="未缴纳保证金"/>
+                    <img src="/theme/default/img/business-youx.png" alt="111" title="邮箱认证">          <img src="/theme/default/img/shv.png" alt="222" title="VIP商家">          <img src="/theme/default/img/teyue2.png" title="不是特约商户"/>
+                </div>
+                <p>商家网站: <a href=""></a></p>
+                <p>商家ＱＱ: 2205343079          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2205343079&site=qq&menu=yes" style="display: inline-block;vertical-align: middle;"><img border="0" style="margin-top: -3px;vertical-align: top;" src="/theme/default/pay/pay1/images/kf_qq.gif" alt="卖家qq" title="联系卖家"/></a></p>
+                <p>视频直播:
+                    <a href="$merchant['video']" target="_blank" style="color:#333;font-weight: bold;">该商家没有填写视频地址</a>
+                </p>
+                <p>服务时间:该商家还没有设置服务时间</p>
+
+
+                <div class="yingwei"> <img src="/theme/default/pay/pay2/images/yingwen.png" width="100%"> </div>
+                <!-- <div class="ad-wrap" style="margin-top: 40px;width: 100%">
+                   <div class="swiper-container">
+                     <div class="swiper-wrapper">
+                       <div class="swiper-slide"><a href="http://nz.qq.com/cp/a20180817newbie/index.htm?e_code=434479&idataid=226520"><img src="/uploads/banner/20180823/6cecbc6e53971f889188e8da26226ef6.jpg" alt=""><p>广告</p></a></div>
+                       <div class="swiper-slide"><a href="http://pubg.qq.com/cp/a20180710pgi/index.shtml?ADTAG=cop.outerenter.marketing.index"><img src="/uploads/banner/20180823/934394753ee5cc85b5da935446422111.jpg" alt=""><p>广告</p></a></div>
+                       <div class="swiper-slide"><a href="https://www.dota2.com.cn/international/2018/live"><img src="/uploads/banner/20180823/dcce40fa76d894f2e2ab0a0f3cfb9aa3.jpg" alt=""><p>广告</p></a></div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                   </div>
+                 </div>-->
+                <!--2018.10.07新增加的-->
+                <div class="ad-wrap" style="margin-top: 40px;width: 100%;">
+                    <div class="slick" style="width: 100%;height: 199px;">
+                        <div><a href="http://nz.qq.com/cp/a20180817newbie/index.htm?e_code=434479&idataid=226520"><img style="width: 100%;height: 199px" src="/uploads/banner/20180823/6cecbc6e53971f889188e8da26226ef6.jpg" alt=""><p>广告</p></a></div>
+                        <div><a href="http://pubg.qq.com/cp/a20180710pgi/index.shtml?ADTAG=cop.outerenter.marketing.index"><img style="width: 100%;height: 199px" src="/uploads/banner/20180823/934394753ee5cc85b5da935446422111.jpg" alt=""><p>广告</p></a></div>
+                        <div><a href="https://www.dota2.com.cn/international/2018/live"><img style="width: 100%;height: 199px" src="/uploads/banner/20180823/dcce40fa76d894f2e2ab0a0f3cfb9aa3.jpg" alt=""><p>广告</p></a></div>
+                    </div>
+                </div>
+                <!--2018.10.07新增加的-->
+            </div>
+        </aside>
+        <div id="fh5co-main">111
+            <aside id="fh5co-hero" class="js-fullheight">
+                <div class="row" style="background:#000;">
+                    <header class="fr">
+                        <ul>
+                            <li class="header-search-img">
+                                <a href="/user/search/index.html" title="订单搜索"><img src="/theme/default/img/tgp-search-icon.png" alt=""></a>
+                            </li>
+                            <li>欢迎来到畅享发卡平台！</li>
+                            <li><a href="/home/common/login.html">请登录</a> &nbsp <a href="/home/common/register.html">免费注册</a></li>
+                        </ul>
+                    </header>
+                </div>
+                <div class="flexslider js-fullheight">
+                    <ul class="slides">
+                        <li class="slides_content" id="slides_content">
+                            <div id="app" class="container-fluid">
+                                <div class="row">
+                                    <div class="js-fullheight slider-text zhifu">
+                                        <div class="col-md-12 bd-tijiao" style=" padding: 20px 50px">
+                                            <p class="gonggao clearfix">
+                                                <img src="/theme/default/pay/pay2/images/laba.gif" style="width: 23px; height: 19px;" /><span style="display: block; max-width: 320px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; float: left; ">商家公告： </span>
+
+                                            </p>
+                                            <div class="touying"> <img src="/theme/default/pay/pay2/images/fengexian.png" /> </div>
+                                            <form action="/Gateway/RequestTo" autocomplete="off" class="sp_biaodan" method="post" id="myform" name="myform">
+                                                <h1 style="font-size: 24px;color: #d98500;font-weight: normal;margin-bottom: 20px;" class="sp_biaodan"> <img src="/theme/default/pay/pay2/images/sz1.jpg" style="width: 27px; height: 27px;margin-right: 10px;" />选择商品</h1>
+                                                <div class="over">
+                                                    <div class="fl">
+                                                        <div class="input_group">
+                                                            <label>商品分类：</label>
+                                                            <select name="cateid" id="cateid" class="zsp">
+                                                                <option>请选择</option>
+                                                                <option value="9" >CC卡密</option>
+                                                                <option value="10" >DD卡密</option>
+                                                                <option value="76" >EE</option>
+                                                                <option value="8" >BB卡密</option>
+                                                                <option value="7" >AA、卡密</option>
+                                                                <option value="115" >其味无穷</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <label>商品名称：</label>
+                                                            <select name="goodid" id="selectd" class="" style="border: 0;">
+                                                                <option >请选择</option>
+                                                            </select>&nbsp;&nbsp;<span id="xsbs" style="color: red;font-weight: 600;">未选中状态</span>
+                                                        </div>
+                                                        <p class="jiage">商品单价：<span id="jiag"></span> <strong>元</strong></p>
+                                                        <div class="jiage over" style="width: 498px;">购卡说明：<div id="shuoming" class="fr">未选中分类</div></div>
+                                                        <input type="hidden" name="names" value="2" id="shang">
+                                                        <input type="hidden" value="" id="ratio">
+                                                        <input type="hidden" value="" id="he"/>
+                                                        <input type="hidden" value="" id="goodis"/>
+                                                        <input type="hidden" name="price" id="price" value="">
+                                                        <input type="hidden" name="sid" value="" id="ping">
+                                                        <div class="input_group">
+                                                            <label>购买数量：</label>
+                                                            <input type="text" name="num" value="0" id="buy_money"  onkeyup="value=value.replace(/[^\d]/g,'')">
+                                                            <span id="num"></span>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <label>联系方式：</label>
+                                                            <input type="text" name="phone" id="phone" class="" placeholder="请输入联系方式">
+                                                            <br><span class="red" style="padding-left: 0;margin-left: 76px;">*</span> <span style="padding-left: 0">联系方式为任意字符</span> <span class="red" style="padding-left: 0">订单查询重要凭证</span>
+                                                        </div>
+                                                        <div class="input_group">
+                                                            <label>电子邮箱：</label>
+                                                            <input type="text" name="email" id="email" class="" placeholder="请输入接受邮箱">
+                                                            <br><span class="red" style="padding-left: 0;margin-left: 76px;">*</span><span style="padding-left: 0">请填写您的邮箱账号支付成功后,将<span class="red" style="padding-left: 0">卡密发送到此邮箱</span>,如不需要请留空</span>
+                                                        </div>
+                                                        <p class="duanxi">
+                                                            <input type="checkbox" name="duanxin" value="1" id="duanxin" style="margin: 0;vertical-align: middle;" />
+                                                            短信接收(费用0.1元)
+                                                        </p>
+                                                    </div>
+                                                    <div class="fr phone-ma">
+                                                        <div id="saoma"></div>
+                                                        <p>可用手机扫描二维码购买</p>
+                                                    </div>
+                                                </div>
+                                                <div class="zhifu_fs sp_biaodan">
+                                                    <h1 style="margin-top: 16px;font-size: 24px;color: #d98500;font-weight: normal;margin-bottom: 20px;"> <img src="/theme/default/pay/pay2/images/sz2.jpg" style="width: 27px; height: 27px" />支付方式</h1>
+                                                    <input type="radio" style="display: none" name="paytype" value="bank" id="bank" checked />
+                                                    <div class="zf_fangshi">
+                                                        <div class="xx_box mt20" style="width: 800px;">
+                                                            <dl class="fstj_box over" style="width: 100%;color: #fff;">
+                                                                <dt>需支付：</dt>
+                                                                <dd style="margin-left: 0;width: 300px;" class="fl"><span class="red font20" id="bz"></span>元</dd>
+                                                            </dl>
+                                                            <dl class="fstj_box mt15">
+                                                                <dt>支付方式：</dt>
+                                                                <div class="pay-wrap">
+                                                                    <ul class="pay-way over" id="topayway">
+                                                                        <!--<li class="hover">余额支付</li>-->
+                                                                        <li>支付宝</li>
+                                                                        <li>QQ扫码</li>
+                                                                        <li>网银支付</li>
+                                                                        <li>余额</li>
+                                                                    </ul>
+                                                                    <div class="pay"  id="shina" style="border-bottom: 0;">
+                                                                        <!--<div class="zfxz_box active1">-->
+                                                                        <!--<input type="radio" id="radio1" name="types" data="0-0" value="99" class="regular-radio regulars-radios" />-->
+                                                                        <!--<label for="radio1" class="paypay"><span class="zffs_box"><img src="/theme/default/img/yue.png">账户余额</span></label>-->
+
+                                                                        <!--</div>-->
+                                                                        <div class="zfxz_box">
+                                                                            <input type="radio" id="radio-0-0" data="1-1" value="1" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-0-0" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180808/ee76c2e376dafe3ac761354d9c11cac7.gif" title="迪志科技-支付宝"></span></label>
+
+                                                                            <input type="radio" id="radio-0-1" data="1-36" value="1" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-0-1" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180902/7a4e3f1cab3c3ce0bb59aa4ee6e400e2.gif" title="优畅-上海银行-支付宝"></span></label>
+
+                                                                            <input type="radio" id="radio-0-2" data="1-6" value="1" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-0-2" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180808/ee76c2e376dafe3ac761354d9c11cac7.gif" title="威富通-上海银行-支付宝"></span></label>
+
+                                                                        </div>
+                                                                        <div class="zfxz_box">
+                                                                            <input type="radio" id="radio-1-0" data="4-4" value="4" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-1-0" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180903/381a9d214b13df7a74f70fb45f31f4ff.png" title="迪志科技-QQ扫码"></span></label>
+
+                                                                            <input type="radio" id="radio-1-1" data="4-40" value="4" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-1-1" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180903/e4b0db6f83f330b0262b665b7eb2a139.png" title="优畅-上海银行-QQ扫码"></span></label>
+
+                                                                            <input type="radio" id="radio-1-2" data="4-41" value="4" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-1-2" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180903/824d47480160d434cea446f126b0a815.png" title="威富通-上海银行-QQ扫码(备)"></span></label>
+
+                                                                        </div>
+                                                                        <div class="zfxz_box">
+                                                                            <input type="radio" id="radio-2-0" data="3-3" value="3" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-2-0" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180906/e96e05acbeaf0081a6aa4ccf83671a85.png" title="迪志科技-财付通"></span></label>
+
+                                                                        </div>
+                                                                        <div class="zfxz_box">
+                                                                            <input type="radio" id="radio-3-0" data="11-44" value="11" name="types" class="regular-radio regulars-radios" />
+                                                                            <label for="radio-3-0" class="paypay"><span class="zffs_box"><img src="/uploads/banner/20180920/d2ef1d9c102fa0d27587c8a297111787.png" title="余额支付"></span></label>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </dl>
+                                                            <div class="c-wrap">
+                                                                <h3 class="phone-title" style="margin-bottom: 16px;">
+                                                                    充卡数量：
+                                                                    <select name="" class="spfl w160 mr15" style="height: 32px;line-height: 32px;margin: 0;" id="ka_num">
+                                                                        <option value="">请选择充卡数量</option>
+                                                                        <option value="1">1张卡</option>
+                                                                        <option value="2">2张卡</option>
+                                                                        <option value="3">3张卡</option>
+                                                                        <option value="4">4张卡</option>
+                                                                        <option value="5">5张卡</option>
+                                                                        <option value="6">6张卡</option>
+                                                                        <option value="7">7张卡</option>
+                                                                        <option value="9">8张卡</option>
+                                                                        <option value="8">9张卡</option>
+                                                                        <option value="9">10张卡</option>
+                                                                    </select>
+                                                                </h3>
+                                                                <ul class="phone-title" id="phone_wrap">
+
+                                                                </ul>
+                                                            </div>
+
+                                                            <div class="zfcz_box">
+                                                                <dt></dt>
+                                                                <dl class="fstj_box mt15">
+                                                                    <dt>使用优惠券</dt>
+                                                                    <dd>
+                                                                        <input type="text" name="yhqs" class="xxsr_wb" placeholder="请输入优惠码">
+                                                                    </dd>
+                                                                    <div class="clear"></div>
+                                                                </dl>
+                                                                <dl class="fstj_box mt15">
+                                                                    <dt><input type="button" id="form_cz" value="支付" class="zf_an"></dt>
+                                                                    <dd><input type="checkbox" name="ty"  value="1" id="checkbox-1-2" style="margin: -1px 0 0;vertical-align: middle;" />同意接受 <a href="#" class="col108e">畅享发卡免责声明</a></dd>
+                                                                    <div class="clear"></div>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </form>
+</div>
+
+
+<div class="psw-alert centers once-price" style="padding-bottom:20px;">
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">确认支付</span><i class="fr ma-close"></i></div>
+    <div class="over mar28">
+        <ul class="fl shop-list">
+            <li><span>商品名称：</span><span class="col-739DF3"></span></li>
+            <li><span>订单号：</span><span id="ord"></span></li>
+            <li><span>支付金额：</span><span class="col-D0021B"></span></li>
+            <li><span>支付方式：</span><span class="zffss"></span></li>
+        </ul>
+        <div class="fr">
+            <div class="ma mb10" id="qrcode"></div>
+            <p class="ma-txt" style="text-align: center;">扫一扫 完成付款</p>
+        </div>
+    </div>
+</div>
+<p class="ceng"></p>
+<!--设置支付密码-->
+<!--tgp免责声明-->
+<div class="psw-alert centers mzsm" style="padding-bottom:20px;">
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">免责声明</span><i class="fr ma-close"></i></div>
+    <div class="ze-content" id="inner-content">
+        <p>本网站在国家相关法律法规规定的范围内，只按现有状况提供软件注册码在线交易第三方网络平台服务，本网站及其所有者非交易一方，也非交易任何一方之代理人或代表;同时， 本网站及其所有者也未授权任何人代表或代理本网站及其所有者从事任何网络交易行为或做出任何承诺、保证或其他类似行为，除非有明确的书面授权。</p>
+        <p> 鉴于互联网及网络交易的特殊性，本网站无法鉴别和判断相关交易各主体之民事权利和行为能力、资质、信用等状况，也无法鉴别和判断虚拟交易或正在交易或已交易虚拟物品来源 、权属、真伪、性能、规格、质量、数量等权利属性、自然属性及其他各种状况。因此，交易各方在交易前应加以仔细辨明，并慎重考虑和评估交易可能产生的各项风险。</p>
+        <p>本网站不希望出现任何因虚拟物品交易而在用户之间及用户与游戏开发运营商之间产生纠纷，但并不保证不发生该类纠纷。对于因前述各类情形而产生的任何纠纷，将由交易各方依 据中华人民共和国现行的有关法律通过适当的方式直接加以解决，本网站及其所有者不参与其中；对于因此类交易而产生的各类纠纷之任何责任和后果，由交易各方承担，本网站及其所有者不承担任何责任及后果。</p>
+        <p>本网站不希望出现任何人利用本网站或因使用本网站而侵犯他人合法权益的行为，但并不保证不会发生此类行为或类似行为。本网站将依据中国法律采取必要的措施防止发生前述各类行为或降低发生这类行为的可能性或者降低由此造成的损失及其后果。对于因前述各类情形而产生的任何纠纷，将由权利受到侵害之人和侵权方依据中华人民共和国现行的有关法律通过适当的方式直接加以 解决，本网站及其所有者不参与其中；对于因此类行为产生的各类纠纷之任何责任和后果，由相关责任方承担，本网站及其所有者不承担任何责任及后果。</p>
+        <p>凡有客户投诉涉及不正常交易或疑似诈骗的帐户，公司有权冻结相应帐户。请相应帐户持有人于冻结之日起30日内提供相应证明材料证明交易的真实性或投诉不属实。在相应时间内 未提供材料或材料审核未通过的，公司有权进行帐户相应款项退回处理。</p>
+        <p>任何非本网站责任而产生的任何其他纠纷，概由纠纷各方依据中国相关法律以适当的方式直接加以解决，本网站不参与其中；对于因该类行为产生的各类纠纷之任何责任和后果，由相关各方承担，本网站及其所有者不承担任何责任及后果。</p>
+    </div>
+    <div class="psw-zoom over fr" style="margin-right: 40px;margin-top: 16px;margin-bottom: 0;"><input type="button" value="同意" class="qd-btn que"></div>
+    <div class="psw-zoom over fr" style="margin-right: 40px;margin-top: 16px;margin-bottom: 0;"><input type="button" value="拒绝" class="qd-btn refuse"></div>
+</div>
+<!--余额支付-->
+<div class="balance-payment-wrap psw-alert center" >
+    <div class="psw-head over" style="margin-bottom: 0;"><span class="fl">余额支付</span><i class="fr balance-close"></i></div>
+    <div class="balance-payment-text">
+        <ul class="mar28">
+            <li class="balance-item"><span>商品名称：</span><span id="spm"</span></li>
+            <li class="balance-item"><span>&nbsp;&nbsp;&nbsp;订单号：</span><span id="ddh"></span></li>
+            <li class="balance-item"><span>支付金额：</span><span id="je" style="color: red;"></span><span>元</span></li>
+            <li class="balance-item"><span>支付方式：</span><span>余额支付</span></li>
+            <li class="balance-item"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 余额：</span><span id="ye" style="color: ord;"></span><span>元</span></li>
+        </ul>
+        <a href="/home/kami/pay_password.html"><div class="ok-and-cancel">确定</div></a>
+    </div>
+</div>
+</body>
+<script src="/theme/default/pay/pay2/js/jquery.1.9.1.min.js"></script>
+<script src="/theme/default/pay/pay2//Content/layer/layer.js"></script>
+<script src="/theme/default/pay/pay2/js/newshop.js"></script>
+<script src="/theme/default/pay/pay2/js/jquery.my-modal.1.1.js"></script>
+<!--<script src="/theme/default/js/swiper.min.js"></script>-->
+<script src="/theme/default/js/slick.min.js"></script> <!--2018.10.07新增加的-->
+<script type="text/javascript">
+    $(".balance-close,.ok-and-cancel").click(function(){
+        $(".balance-payment-wrap").hide()
+        $(".ceng").hide()
+    })
+
+    $(function(){
+        $("#topayway li:first-child").addClass("hover")
+        $('#shina div:first-child').addClass('active1')
+    });
+
+
+    $('.paypay').click(function(){
+        $('.paypay').css({'border':'none','border-radius':'2px'});
+        if($('.regular-radio').is(':checked')==true){
+            $(this).css({'border':'1px solid #108ee9','border-radius':'2px'});
+        }
+    });
+    /*var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      paginationClickable: true,
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      spaceBetween: 15,
+      hashnav: true,
+      speed: 2000,
+      loop: true,
+      observer:true,
+      observeParents:true,
+      autoplayDisableOnInteraction : false,
+      autoplay:1500
+    });*/
+    /*10.07新增加*/
+    $(function(){
+        $('.slick').slick({
+            dots: true,
+            autoplay: true
+        });
+    });
+    /*10.07新增加*/
+    var m3 = new MyModal3.modal(function () { });
+    $('.btn3').on("click", function () {
+        m3.show();
+    });
+</script>
+<script src="/theme/default/pay/pay2/js/jquery.easing.1.3.js"></script>
+<script src="/theme/default/pay/pay2/js/bootstrap.min.js"></script>
+<script src="/theme/default/pay/pay2/js/jquery.waypoints.min.js"></script>
+<script src="/theme/default/pay/pay2/js/jquery.flexslider-min.js"></script>
+<script src="/theme/default/pay/pay2//Scripts/jquery.form.min.js"></script>
+<script src="/theme/default/pay/pay2/js/main.js"></script>
+<script src="/theme/default/js/jquery.slimscroll.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#topayway li:first-child").addClass("hover")
+        $('#shina div:first-child').addClass('active1')
+    })
+
+    $('.pay-way li').click(function(){
+        $(this).addClass('hover').siblings('li').removeClass('hover');
+        $('.zfxz_box').eq($(this).index()).addClass('active1').siblings('div').removeClass('active1');
+    });
+    jQuery(document).ready(function ($) {
+        $("#inner-content").slimScroll({
+            height: '300px'
+        });
+    });
+    jQuery(document).ready(function ($) {
+        $("#shuoming").slimScroll({
+            height: '100px'
+        });
+    });
+    $('.que,.refuse').click(function(){
+        $('.ceng').removeClass('active1');
+        $('.psw-alert').hide();
+        $('#checkbox-1-2').attr('checked',true);
+    });
+    /*2018.09.03start*/
+    //点击拒绝勾选协议
+    $('.refuse').click(function(){
+        $('.ceng').removeClass('active1');
+        $('.psw-alert').removeClass('active1');
+        $('#checkbox-1-2').attr('checked',false);
+    });
+    /*2018.09.03end*/
+</script>
+<script>
+    $('.c-wrap').hide();
+    $('.pay-way li').click(function(){
+        $('.c-wrap').hide();
+    });
+
+    $("ul.pay-way li").click(function(){
+        if($(this).text()=='充值卡'){
+            $('.c-wrap').show();
+        }
+    });
+
+    $('#ka_num').change(function () {
+        $('#phone_wrap li').remove();
+        $('#fh5co-aside').height(1300+$(this).val()*184);
+        $('#slides_content').height(1200+$(this).val()*184);
+        for (var i = 1; i <= parseInt($(this).val()); i++) {
+            $('#phone_wrap').append('<li><ol class="phones">' +
+                '<li>点卡面值：<select  name="seller_money" class="spfl w160 mr15" style="height:32px;line-height:32px;margin:0;"><option ="99">请选择点卡面值</option><option value="10">10元</option><option value="15">15元</option><option value="30">30元</option><option value="50">50元</option><option value="100">100元</option></select></li><li>充值卡号：<input type="text"  name="pay"  placeholder=""></li><li>充值卡密：<input type="text" name="pay_password" placeholder=""></li></ol></li>');
+        }
+    })
+
+    $(function () {
+
+        $('#form').submit(function () {
+            var form = $('#form');
+            $.post(form.attr("action"), form.serialize(), function (data) {
+                if (data.code == 1) {
+                    window.location.href = data.url;
+                    alert('提交成功');
+                } else {
+                    alert(data.msg);
+                }
+            }, "json");
+            return false;
+        });
+
+    });
+
+    $(function(){
+
+        $('#buy_money').keyup(function () {
+            var num = $(this).val();
+            //var add = $('#number').val();
+            var dj = $('#jiag').html();
+            var znum = $('#he').val();
+            var sin = $('#selectd').val();
+            if (num < 1) {
+                alert('购买数量最小为1');
+                return false;
+            }
+            if ( Number(num) >  Number(znum)) {
+                alert('数量必须小于等于' + znum);
+                return false;
+            }
+            $.ajax({
+                type:'post',
+                url:"/home/kami/yhjg.html",
+                data:{sin:sin,num:num},
+                success:function(data){
+                    if(data.data=='y'){
+                        var price = num*dj;
+                        $('#bz').html(price);
+                        $('#price').val(price);
+                        return true;
+                    }
+                    if(data.data=='x'){
+                        $('#jiag').html(data.a);
+                        var price = num*data.a;
+                        $('#bz').html(price);
+                        $('#price').val(price);
+                        return true;
+                    }
+                }
+            })
+        });
+
+    });
+    var timer;
+    //提交卡密订单支付页面
+    $(function(){
+        $('.zf_an').click(function(){
+            var sin = $('input[name="types"]:checked').attr("data");
+            if($('#checkbox-1-2').is(':checked')){
+                var ty = $('#checkbox-1-2').val();
+            }
+            if(ty==null){
+                $('.ceng').addClass('active1');
+                $('.mzsm').show();
+                return false;
+            }
+            $.ajax({
+                type:'post',
+                url:"/home/kami/judge.html",
+                data:{sin:sin},
+                success:function(data){
+                    if(data.data==1){
+                        var name = $('#shang').val();
+                        var price = $('#price').val();
+                        var sid = $('#ping').val();
+                        var num = $('#buy_money').val();
+                        var phone = $('#phone').val();
+                        var email = $('#email').val();
+                        if($('#duanxin').is(':checked')){
+                            var duanxin = $('#duanxin').val();
+                        }
+                        if($('#checkbox-1-2').is(':checked')){
+                            var ty = $('#checkbox-1-2').val();
+                        }
+                        if(price == null){
+                            alert("金额错误");
+                            return false;
+                        }
+                        if(num == null){
+                            alert("请输入购买数量");
+                            return false;
+                        }
+                        if(phone == null){
+                            alert("请输入电话");
+                            return false;
+                        }
+                        if(email == null){
+                            alert("请输入邮箱地址");
+                            return false;
+                        }
+                        if(ty == null){
+                            alert("请同意接受免责声明");
+                            return false;
+                        }
+
+                        $.ajax({
+                            type:'post',
+                            url:"/home/kami/qqsm.html",
+                            data:{sin:sin,name:name,price:price,sid:sid,num:num,phone:phone,email:email,duanxin:duanxin,ty:ty},
+                            success:function(data){
+                                if(data.sinss == 99){
+                                    $('#spm').html(data.title);
+                                    $('#ddh').html(data.order_id);
+                                    $('#je').html(data.money);
+                                    $('#ye').html(data.ye);
+                                    $(".balance-payment-wrap").show();
+                                    $(".ceng").show()
+                                    return false;
+                                }
+                                if(data.msg!=null){
+                                    alert(data.msg);
+                                }else{
+                                    if(data.url.result == null){
+                                        alert('该接口错误,请刷新页面在试试,或选择其他接口');
+                                        window.location.reload();
+                                        return false;
+                                    }
+                                    //alert(6546541);
+                                    $('.ceng').addClass('active1');
+                                    $('.once-price').addClass('active1');
+                                    $('.col-739DF3').html(data.title);
+                                    $('#ord').html(data.order_id);
+                                    $('.col-D0021B').html(data.money);
+                                    var id = data.id;
+                                    $('.zffss').html('扫码支付');
+                                    makeCode(data.url.result);
+                                    timer=setInterval( function getCode(){
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "/home/kami/wx.html",
+                                            data: {id:id},
+                                            success: function(data){
+                                                if(data.data == 2){
+                                                    window.location.href="/home/kami/pay_suss.html"+"?id="+id;
+                                                }
+                                            }
+                                        });
+                                    },3000);
+                                }
+                            }
+                        });
+                    }
+                    if(data.data==2){
+                        $('#form').submit();
+                    }
+                    if(data.data==3){
+                        alert('请选择支付方式');
+                    }
+                    if (data.data==7){
+                        var name = $('#shang').val();
+                        var price = $('#price').val();
+                        var sid = $('#ping').val();
+                        var num = $('#buy_money').val();
+                        var phone = $('#phone').val();
+                        var email = $('#email').val();
+                        var ka_num = $('#ka_num').val();
+
+                        var a='';
+                        $("select[name='seller_money']").each(function(){
+                            a+=$(this).val()+',';
+                        });
+
+                        var pay =[];
+                        $("input[name='pay']").each(function(){
+                            pay.push($(this).val());
+                        })
+                        var b = pay.join("-");
+
+                        var pay_password =[];
+                        $("input[name='pay_password']").each(function(){
+                            pay_password.push($(this).val());
+                        })
+                        var c = pay_password.join("-");
+
+                        if($('#duanxin').is(':checked')){
+                            var duanxin = $('#duanxin').val();
+                        }
+                        if($('#checkbox-1-2').is(':checked')){
+                            var ty = $('#checkbox-1-2').val();
+                        }
+                        $.ajax({
+                            type:'post',
+                            url:"/home/kami/link.html",
+                            data:{sin:sin,name:name,price:price,sid:sid,num:num,ka_num:ka_num,phone:phone,email:email,duanxin:duanxin,ty:ty,seller_money:a,pay:b,pay_password:c},
+                            success:function(data){
+                                if(data.msg!=null){
+                                    alert(data.msg);
+                                }else{
+                                    timer=setInterval( function getCode(){
+                                        $.ajax({
+                                            type: "POST",
+                                            url: "/home/kami/wx.html",
+                                            data: {id:id},
+                                            success: function(data){
+                                                if(data.data == 2){
+                                                    window.location.href="/home/kami/pay_suss.html"+"?id="+id;
+                                                }
+                                            }
+                                        });
+                                    },3000);
+                                }
+                            }
+                        })
+                    }
+
+                }
+            })
+        })
+    })
+
+
+
+    $(function(){
+        $('#saoma').attr('title','');
+        $('#qrcode').attr('title','');
+        $('#cateid').click(function(){
+            var qq = $(this).val();
+            $.ajax({
+                type:"post",
+                url:"/home/kami/sinass.html",
+                data:{qq:qq},
+                dataType: "json",
+                success:function(data){
+                    var html;
+                    if(data.data==null){
+                        html = "<option>该分类还没有添加商品</option>";
+                        $('#selectd').html(html);
+                    }else{
+                        html = "<option>请选择商品</option>";
+                        $.each(data.data,function(key,val){
+                            html += "<option value=\""+val.goods_id+"\">"+val.goods_name+"</option>";
+                        })
+                        $('#selectd').html(html);
+                    }
+                },
+            })
+        })
+    })
+
+    $(function(){
+        $('#selectd').click(function(){
+            var qq = $('#selectd').val();
+            var sul = $('#buy_money').val();
+            var qj = 2;
+            if (qq =='请选择'){
+                num = '未选择商品分类';
+                $('#num').html(num);
+                return false;
+            }
+            if(qq=='请选择商品'){return false;}
+            //alert(qq);
+            $.ajax({
+                type:"post",
+                url:"/home/kami/sina.html",
+                data:{qq:qq},
+                success:function(data){
+                    var html;
+                    var num;
+                    num = '至多购买'+data.data.num+'张';
+                    html = data.data.goods_price;
+                    $('#jiag').html(html);
+                    ssmoney = sul*html;
+                    $('#bz').html(ssmoney);
+                    $('#shuoming').html(data.data.explain);
+                    if(qj==2){
+                        abc = '共销售'+data.data.xsbs+'笔'
+                        $('#xsbs').html(abc);
+                    }else{
+                        abc = '';
+                        $('#xsbs').html(abc);
+                    }
+                    $('#num').html(data.data.nums);
+                    $('#he').val(data.data.num+'张');
+                    //$('#shang').val(data.data.uid)
+                    $('#ping').val(data.data.goods_id);
+                    if(data.data.coupon == null){
+                        $('#coupon').hide();
+                    }else {
+                        $('#coupon').show();
+                    }
+                }
+            })
+        })
+    })
+    $('.col108e').click(function(){
+        $('.ceng').addClass('active1');
+        $('.mzsm').show();
+    });
+    $('.ma-close').click(function(){
+        clearInterval(timer);
+        $('.ceng').removeClass('active1');
+        $('.once-price').removeClass('active1');
+        $('.youx').removeClass('active1');
+        $('.mzsm').hide();
+        javascript:location.reload();
+    });
+    $('.qu').click(function(){
+        clearInterval(timer);
+        $('.ceng').removeClass('active1');
+        $('.once-price').removeClass('active1');
+        $('.mzsm').hide();
+    });
+
+</script>
+<script type="text/javascript" src="/theme/default/js/qrcode.min.js"></script>
+<script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 150,
+        height : 150
+    });
+    function makeCode (url) {
+        qrcode.makeCode(url);
+    }
+    var saoma = new QRCode(document.getElementById("saoma"), {
+        width : 140,
+        height : 140
+    });
+    var ul = 'http://www.cxka.com/home/kami/pay_phone/sjtg/'+2+'.html';
+    function makesd(url){
+        saoma.makeCode(url);
+    }
+    makesd(ul);
+</script>
+
+</html>

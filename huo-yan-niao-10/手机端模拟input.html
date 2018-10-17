@@ -1,0 +1,65 @@
+<<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>{:get_title()}</title>
+    <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".input_select").click(function(){
+                var ul = $("#dropdown ul");
+                if(ul.css("display")=="none"){
+                    ul.slideDown("fast");
+                }else{
+                    ul.slideUp("fast");
+                }
+            });
+            $("#dropdown ul li a").click(function(){
+                var txt = $(this).text();
+                $(".input_select").val(txt);
+                $("#dropdown ul").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<style type="text/css">
+    ul,li{list-style:none;padding:0;margin:0;}
+    #dropdown{position:relative}
+    .input_select{width:96%; height:40px; line-height:40px;border: none; background:#eee; border-bottom: 1px solid #ddd; margin-bottom: 2px;padding-left: 2%;}
+    #dropdown ul{width:98%; margin-left: 1%; background:#fff; position:absolute; display:none;border-bottom:1px solid #60c8f2}
+    #dropdown ul li{height:40px; line-height:40px; text-indent:10px;border-top: 1px solid #60c8f2;
+        width:40%;
+        float: left;}
+    #dropdown ul li:first-child{border-top: none;}
+    #dropdown ul li a{display:block; height:40px; color:#807a62; text-decoration:none}
+    #dropdown ul li a:hover{background:#c6dbfc; color:#369}
+</style>
+<div id="main_container">
+    <include file="Public/header"/>
+    <div class="main_content">
+        <include file="Public/menu"/>
+        <div class="center_content">
+            <div class="left_content2">
+                <div id="dropdown">
+                    <input class="input_select" id="" type="text" placeholder="选择门店"/>
+                    <ul>
+                        <li><a href="#" rel="0">全部</a></li>
+                        <li><a href="#" rel="03">二店</a></li>
+                        <li><a href="#" rel="04">三店</a></li>
+                        <li><a href="#" rel="05">五店</a></li>
+                        <li><a href="#" rel="06">六店</a></li>
+                        <li><a href="#" rel="07">七店</a></li>
+                        <li><a href="#" rel="08">八店</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

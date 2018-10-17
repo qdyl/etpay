@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <style>
+       /* #scrollBox{height:20px;width:300px;overflow:hidden;}*/
+        /*#scrollBox #con1,#con2{width:280px;float:left;}
+        #scrollBox li{height:15px;line-height:15px;text-align:center;}*/
+    </style>
+</head>
+<body>
+<header class="header-fixed">
+    <h2 class="title">首页</h2>
+</header>
+<div class="height-44"></div>
+<section id="index">
+    <div class="slick">
+        <div class="img">
+            <a href="###"><img src="images/banner1.png" alt=""></a>
+        </div>
+        <div class="img">
+            <a href="###"><img src="images/banner1.png" alt=""></a>
+        </div>
+        <div class="img">
+            <a href="###"><img src="images/banner1.png" alt=""></a>
+        </div>
+    </div>
+    <div class="notification">
+        <span class="fl">通知：</span>
+        <ul id="scrollBox">
+            <li class="" id="con1">今天新币上线，请各位敬请期待！</li>
+            <li class="new-notice" id="con2"></li>
+        </ul>
+    </div>
+    <div class="volume">
+        <span class="fl">ETPAY</span>
+        <span class="fr color-D73F4E">今日成交总量:2000.00</span>
+    </div>
+    <div class="k-xian-items">
+        <ul class="k-items clearfix-zl">
+            <li class="k-item active">K线</li>
+            <li class="k-item">走势</li>
+            <li class="k-item">1M</li>
+            <li class="k-item">5M</li>
+            <li class="k-item">15M</li>
+            <li class="k-item">30M</li>
+            <li class="k-item">1H</li>
+            <li class="k-item">1D</li>
+            <li class="k-item">2D</li>
+            <li class="k-item">3D</li>
+            <li class="k-item">4D</li>
+        </ul>
+    </div>
+    <!--<iframe src="http://baidu.comss" frameborder="0" width="100%">
+        这里是K线图
+
+    </iframe>-->
+    <img src="images/kxian-img.png" alt="">
+    <div class="introduce">
+        <div class="title clearfix-zl">
+            <span class="fl">币种简介</span>
+            <i class="down-up-icon fr"></i>
+        </div>
+        <div class="introduce-details none">
+            <p>
+                比特币（BitCoin）的概念最初由中本聪在2009年提出，根据中本聪的思路设计发布的开源软件以及建构其上的P2P网络。比特币是一种P2P形式的数字货币。点对点的传输意味着一个去中心化的支付系统。
+            </p>
+        </div>
+    </div>
+</section>
+<div class="height-150"></div>
+<footer class="com-footer">
+    <ul class="footer-items clearfix-zl">
+        <li class="footer-item fl active">
+            <a href="index.html">
+                <div class="details">
+                    <i class="icon one-icon"></i>
+                    <p>首页</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="huobijiaoyi.html">
+                <div class="details">
+                    <i class="icon two-icon"></i>
+                    <p>货币交易</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="xinbifaxing.html">
+                <div class="details">
+                    <i class="icon three-icon"></i>
+                    <p>新币发行</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="bibijiaoyi.html">
+                <div class="details">
+                    <i class="icon four-icon"></i>
+                    <p>币币交易</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="gerenzhongxin.html">
+                <div class="details">
+                    <i class="icon five-icon"></i>
+                    <p>个人中心</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+
+
+</body>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/common-style.js"></script> <!--公共js文件-->
+<script src="js/slick.min.js"></script>  <!--轮播插件-->
+<script>
+    // 消息通知
+    let area =document.getElementById('scrollBox');
+    let con1 = document.getElementById('con1');
+    let con2 = document.getElementById('con2');
+    con2.innerHTML=con1.innerHTML;
+    function scrollUp(){
+        if(area.scrollTop>=con1.offsetHeight){
+            area.scrollTop=0;
+        }else{
+            area.scrollTop++
+        }
+    }
+    let time = 50; //
+    let mytimer=setInterval(scrollUp,time);
+    area.onmouseover=function(){
+        clearInterval(mytimer);
+    };
+    area.onmouseout=function(){
+        mytimer=setInterval(scrollUp,time);
+    };
+
+    // 轮播图
+    $(function(){
+        $('.slick').slick({
+            dots: true,
+            autoplay: true,
+            arrows: false
+        });
+        $(".introduce-details").scrollTop(300)
+    });
+
+
+</script>
+</html>

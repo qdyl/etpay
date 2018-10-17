@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">交易记录</h2>
+    <div class="choose-title-items"><span class="cho-title-item">货币交易</span><i class="arrow-down-icon"></i></div>
+    <ul class="h-select none">
+        <li class="active">货币交易<i class="arrow-down-icon"></i></li>
+        <li>新币发行</li>
+        <li>币币交易</li>
+        <li>提币转币</li>
+    </ul>
+</header>
+<div class="height-44"></div>
+<section id="jiaoyijilu">
+    <div class="jiaoyijilu">
+        <!--“货币交易”页面-->
+        <div class="hupbijiaoyi-page">
+            <div class="huobi-btns clearfix-zl">
+                <div class="huobi-btn fl active">
+                        <span>持仓订单</span>
+                </div>
+                <div class="huobi-btn fr ">
+                        <span>历史订单</span>
+                </div>
+            </div>
+            <div class="height-44"></div>
+            <div class="page-one-wrap">
+                <!--"货币交易"的 "持仓订单"-->
+                <ul class="page-one-mians1">
+                    <li class="main">
+                        <ul class="main-header">
+                            <li class="li-title clearfix-zl">
+                                <div class="left fl">BTC/USDT</div>
+                                <div class="right fr">订单编号:12345678</div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    建仓时间: <span>2018/1/1 14:12</span>
+                                </div>
+                                <div class="right fr">
+                                    建仓价格: <span>6333.33</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    投单金额: <span>1000</span>
+                                </div>
+                                <div class="right fr">
+                                    时间收益: <span>30s/80%</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    建仓方向: <span class="color-D73F4E">看跌</span>
+                                </div>
+                                <div class="right fr">
+                                    当前价格: <span class="color-D73F4E">6333.33</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    时间倒计时: <span class="time color-D73F4E">28</span><span class="color-D73F4E">s</span>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main">
+                        <ul class="main-header">
+                            <li class="li-title clearfix-zl">
+                                <div class="left fl">BTC/USDT</div>
+                                <div class="right fr">订单编号:12345678</div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    建仓时间: <span>2018/1/1 14:12</span>
+                                </div>
+                                <div class="right fr">
+                                    建仓价格: <span>6333.33</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    投单金额: <span>1000</span>
+                                </div>
+                                <div class="right fr">
+                                    时间收益: <span>30s/80%</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    建仓方向: <span class="color-D73F4E">看跌</span>
+                                </div>
+                                <div class="right fr">
+                                    当前价格: <span class="color-D73F4E">6333.33</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    时间倒计时: <span class="time color-D73F4E">28</span><span class="color-D73F4E">s</span>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--"货币交易"的 "历史持单"-->
+                <ul class="page-one-mians2 none">
+                    <li class="c-j-item c-j-choose-date">
+                        <form>
+                            <div class="choose-date"><i class="date-icon"></i><input type="text" id="date1" placeholder="开始时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                            <div class="choose-date"><i class="date-icon"></i><input type="text" id="date2" placeholder="结束时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                            <button class="submit-btn-comfirm" type="submit">确定</button>
+                        </form>
+                        <div class="chicangdingdan">
+                            <div class="main">
+                                <ul class="main-header">
+                                    <li class="li-title clearfix-zl">
+                                        <div class="left fl">BTC/USDT</div>
+                                        <div class="right fr">订单编号:12345678</div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入时间: <span>2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            买入价格: <span>6333.33</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入数量: <span>1000</span>
+                                        </div>
+                                        <div class="right fr">
+                                            卖出价格: <span>1000</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            卖出时间: <span class="">2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            盈亏: <span class="f-size-20-1FC65C">+880</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="main">
+                                <ul class="main-header">
+                                    <li class="li-title clearfix-zl">
+                                        <div class="left fl">BTC/USDT</div>
+                                        <div class="right fr">订单编号:12345678</div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入时间: <span>2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            买入价格: <span>6333.33</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入数量: <span>1000</span>
+                                        </div>
+                                        <div class="right fr">
+                                            卖出价格: <span>1000</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            卖出时间: <span class="">2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            盈亏: <span class="f-size-20-1FC65C">+880</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--“新币发行”页面-->
+        <div class="xinbifaxing-page none">
+            <div class="xinbi-btns clearfix-zl">
+                <div class="xinbi-btn fl active">
+                    <span>持仓订单</span>
+                </div>
+                <div class="xinbi-btn fr ">
+                    <span>历史订单</span>
+                </div>
+            </div>
+            <div class="height-44"></div>
+            <div class="page-two-wrap">
+                <!--"新币发行"的 "持仓订单"-->
+                <ul class="page-two-mians1 ">
+                    <li class="main">
+                        <ul class="main-header">
+                            <li class="li-title clearfix-zl">
+                                <div class="left fl">BTC/USDT</div>
+                                <div class="right fr">订单编号:12345678</div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    买入时间: <span>2018/1/1 14:12</span>
+                                </div>
+                                <div class="right fr">
+                                    买入价格: <span>1000</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    买入数量: <span>1000</span>
+                                </div>
+                                <div class="right fr">
+                                    当前价格: <span>1000</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    盈亏: <span class="f-size-20-D73F4E">-100</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="main">
+                        <ul class="main-header">
+                            <li class="li-title clearfix-zl">
+                                <div class="left fl">BTC/USDT</div>
+                                <div class="right fr">订单编号:12345678</div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    买入时间: <span>2018/1/1 14:12</span>
+                                </div>
+                                <div class="right fr">
+                                    买入价格: <span>1000</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    买入数量: <span>1000</span>
+                                </div>
+                                <div class="right fr">
+                                    当前价格: <span>1000</span>
+                                </div>
+                            </li>
+                            <li class="li-item clearfix-zl">
+                                <div class="left fl">
+                                    盈亏: <span class="f-size-20-D73F4E">-100</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!--"新币发行"的 "持仓订单"-->
+                <ul class="page-two-mians2 none">
+                    <li class="c-j-item c-j-choose-date">
+                        <form>
+                            <div class="choose-date"><i class="date-icon"></i><input type="text" id="date1" placeholder="开始时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                            <div class="choose-date"><i class="date-icon"></i><input type="text" id="date2" placeholder="结束时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                            <button class="submit-btn-comfirm" type="submit">确定</button>
+                        </form>
+                        <div class="chicangdingdan">
+                            <div class="main">
+                                <ul class="main-header">
+                                    <li class="li-title clearfix-zl">
+                                        <div class="left fl">BTC/USDT</div>
+                                        <div class="right fr">订单编号:12345678</div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入时间: <span>2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            买入价格: <span>6333.33</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入数量: <span>1000</span>
+                                        </div>
+                                        <div class="right fr">
+                                            卖出价格: <span>1000</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            卖出时间: <span class="">2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            盈亏: <span class="f-size-20-1FC65C">+880</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="main">
+                                <ul class="main-header">
+                                    <li class="li-title clearfix-zl">
+                                        <div class="left fl">BTC/USDT</div>
+                                        <div class="right fr">订单编号:12345678</div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入时间: <span>2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            买入价格: <span>6333.33</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            买入数量: <span>1000</span>
+                                        </div>
+                                        <div class="right fr">
+                                            卖出价格: <span>1000</span>
+                                        </div>
+                                    </li>
+                                    <li class="li-item clearfix-zl">
+                                        <div class="left fl">
+                                            卖出时间: <span class="">2018/1/1 14:12</span>
+                                        </div>
+                                        <div class="right fr">
+                                            盈亏: <span class="f-size-20-1FC65C">+880</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--“提币转币”页面-->
+        <div class="tibizhuanbi-page none">
+            <ul>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>提币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-20C662">+800</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>转币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-D73F4E">100</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>提币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-20C662">+800</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>转币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-D73F4E">100</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>提币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-20C662">+800</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>转币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-D73F4E">100</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>提币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-20C662">+800</span>
+                    </div>
+                </li>
+                <li class="ti-zhuan-item clearfix-zl">
+                    <div class="left fl">
+                        <p>转币BTC</p>
+                        <span>余额: 89</span>
+                    </div>
+                    <div class="right fr">
+                        <p>2018-1-1</p>
+                        <span class="f-size-15-D73F4E">100</span>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </div>
+</section>
+<div class="ceng-mask"></div>
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 点击 头部右边的下拉三角，弹出下拉框
+    $(".choose-title-items").click(function () {
+        $(".h-select").toggle();
+       /* $(".ceng-mask").show();*/
+    });
+
+    // 点选：下拉框的选项，切换子页面
+    $(".h-select>li").click(function () {
+        let tex = $(this).text();
+        let index = $(this).index();
+        $(this).addClass("active").siblings("li").removeClass("active");
+        $(".cho-title-item").text(tex);
+        $(".h-select").hide();
+        $(".jiaoyijilu>div").eq(index).css("display","block").siblings("div").css("display","none");
+        // 如果点击的是“币币交易”，则进行页面跳转
+        if(index===3){
+            alert("测试：页面待定")
+            /*window.location.href = ""*/
+        };
+       /* $(".ceng-mask").hide();*/
+    });
+
+    // "货币交易"页面，切换 "持仓订单" 和 "历史订单"
+    $(".huobi-btn").click(function () {
+        let indexx = $(this).index();
+        $(this).addClass("active").siblings(".huobi-btn").removeClass("active");
+        $(".page-one-wrap>ul").eq(indexx).css("display","block").siblings("ul").css("display","none");
+    });
+    // "新币发行"页面，切换 "持仓订单" 和 "历史订单"
+    $(".xinbi-btn").click(function () {
+        let indexx = $(this).index();
+        $(this).addClass("active").siblings(".xinbi-btn").removeClass("active");
+        $(".page-two-wrap>ul").eq(indexx).css("display","block").siblings("ul").css("display","none");
+    });
+</script>
+</html>

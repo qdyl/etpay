@@ -1,0 +1,54 @@
+<html><head>
+    <style>
+        #tip{display:none;position:absolute;z-index:1000;background:#ccc;border:solid:#333;}
+    </style>
+    <script>
+        function showDiv(event){
+            tip.left = event.x;
+            tip.top = event.y;
+            tip.style.display = "inline";
+        }
+        function hideDiv(event){
+            tip.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+<script>
+    function showIE6Tooltip(e){
+        if(!e){var e = window.event;}
+        var obj = e.srcElement;
+        var objHeight = obj.offsetHeight;
+        var optionCount = obj.options.length;
+        var eX = e.offsetX;
+        var eY = e.offsetY;
+        //vertical position within select will roughly give the moused over option...
+        var hoverOptionIndex = Math.floor(eY / (objHeight / optionCount));
+        var tooltip = document.getElementById('ie6SelectTooltip');
+        tooltip.innerHTML = "111";
+        tooltip.style.display = 'block';
+    }
+    function hideIE6Tooltip(e){
+        var tooltip = document.getElementById('ie6SelectTooltip');
+        tooltip.innerHTML = '';
+        tooltip.style.display = 'none';
+    }
+</script>
+ <select id="test" title="Title on the select" onmousemove="showIE6Tooltip();" onmouseout="hideIE6Tooltip();">
+      <option value="1" title="This is the number 1 option, with a really long title based tooltip">One Thing</option>
+      <option value="2" title="This is the number 2 option, with a really long title based tooltip">Two Thing</option>
+      <option value="3" title="This is the number 3 option, with a really long title based tooltip">Three Thing</option>
+      <option value="4" title="This is the number 4 option, with a really long title based tooltip">Four Thing</option>
+      <option value="5" title="This is the number 5 option, with a really long title based tooltip">Five Thing</option>
+      <option value="6" title="This is the number 6 option, with a really long title based tooltip">Six Thing</option>
+      <option value="7" title="This is the number 7 option, with a really long title based tooltip">Seven Thing</option>
+      <option value="8" title="This is the number 8 option, with a really long tithhhhhhhhhhhhhhhhhhhhhhhhhhhle based tooltip">Eight Thing</option>
+      </select>
+  <div id="ie6SelectTooltip" style="display:none;position:absolute;padding:1px;border:1px solid #333333;;background-color:#fffedf;font-size:normal;"></div>
+
+</body>
+</html>
+
+---------------------
+
+本文来自 qq_27339691 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/qq_27339691/article/details/52048476?utm_source=copy

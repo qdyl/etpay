@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/fstar-eth.css">
+
+</head>
+<body>
+<header class="fstar-eth-header">
+    <img src="img/fstar-eth-top.png" alt="">
+</header>
+<section class="fstar-eth-section">
+    <div class="fstar-egh-wrap relative">
+        <h2 class="direct-title absolute">
+            <i class="line-left"></i>
+            FSTAR零转ETH福利
+            <i class="line-right"></i>
+        </h2>
+        <div class="fstar-eth-main">
+            <div class="eth-features-items">
+                <div class="feature-item">
+                    <div class="one-two">
+                        <img  src="img/five-million.png" alt="">
+                    </div>
+                    <p class="feature-sub-title">投放资金</p>
+                </div>
+                <div class="feature-item">
+                    <div class="one-two">
+                        <img  src="img/open-source.png" alt="">
+                    </div>
+                    <p class="feature-sub-title">是否开源</p>
+                </div>
+                <div class="feature-item">
+                    <img class="three"  src="img/activity-details.png" alt="">
+                    <!--<p class="feature-sub-title">投放资金</p>-->
+                </div>
+            </div>
+            <div class="operation-modes">
+                <h3 class="title">操作方式</h3>
+                <p class="text">转0ETH到合约地址即可赠送100FOB</p>
+                <p class="careful-info">(注：需要钱包0转，交易所不行)</p>
+            </div>
+            <div class="contract-address clearFix">
+                <div class="title clearFix">
+                    <h3 class="fl" >合约地址</h3>
+                    <span class="copy fr" onclick="copy33('0xB64fFdcA47D6c3895608c4E05FaBA6E617b3a031')">点击复制地址</span>
+                </div>
+                <p class="text">
+                    <textarea readonly  class="input" name="" id="url" cols="30" rows="10" placeholder="">0xB64fFdcA47D6c3895608c4E05FaBA6E617b3a031</textarea>
+                    <!--<input class="input" readonly type="text" value="OXB64FdcA44D6C3895608c4E0fFaBA6E617b3a031a1111111">-->
+                </p>
+            </div>
+            <div class="telegram-group clearFix">
+                <div class="title clearFix">
+                    <h3 class="fl" >电报圈交流群</h3>
+                </div>
+                <p class="text">
+                    <a href="http://share.telebox88.com/fstarairdrop_official">http://share.telebox88.com/fstarairdrop_official</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="fstar-brief">
+        <h2 class="title">—— FSTAR简介 ——</h2>
+        <div class="text-wrap">
+            <p class="text">FSTAR是全球首个社交类竞技竞猜公有链平台，玩家不用使用中心化交易所就可以与其他玩家竞技。它是基于以太坊智能合构建的完全去中心化、安全的解决方案。所有竞技竞猜均使用我们专门设计的ERC20代币FOB进行。</p>
+            <p class="text">FSTAR平台对接行情为全球二十二大国际数字货币交易所行情随机随时切换，做到竞技的透明和公平公正，且使用简单。您只需简单预测主流加密货币30s-300s时间内的涨跌方向趋势即可，并不需要太专业的知识，让炒币与牛熊无关，收益变得更加直接高效。您可创建一个或多个竞技星球，指定最低金额以及奖金分配规则。(例如，获胜者获得全部奖励)奖励FOB代币。</p>
+            <p class="text">FSTAR想作为与你的朋友间的竞技竞猜的一个安全、透明、去中心化和乐趣的社交平台，无论您竞技的胜利或失败，FOB都只留在你们两个之间。</p>
+        </div>
+    </div>
+
+    <div class="fstar-eth-footer">
+        <img src="img/fstar-group.png" alt="">
+    </div >
+
+</section>
+
+<div class="copy-success" style="display: none;">
+    <span>复制成功！</span>
+</div>
+
+
+
+</body>
+<script src="../js/jquery-2.1.4.min.js"></script>
+<link href="../../Scripts/layer/layer.css" rel="stylesheet" />
+<script src="../../Scripts/layer/layer.js"></script>
+<script>
+    function copy(){
+        var input1 = document.getElementsByClassName("input")[0]
+        input1.select();
+        document.execCommand("Copy");
+        layer.open({content:"复制成功",skin:'msg',time:2});
+        //document.getElementsByClassName("copy-success")[0].style.display = "block"
+        //setTimeout("success_alert()",2000);//2秒，可以改动
+
+    }
+    function copy33(message) {
+        var input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+//        alert("复制成功")
+        alert($("#url").text())
+        /*layer.open({ content: "复制成功", skin: 'msg', time: 2 });*/
+    }
+
+    //function success_alert(){
+    //    var copytext = document.getElementsByClassName("copy-success")[0];
+    //    copytext.style.display="none";
+    //}
+
+</script>
+</html>

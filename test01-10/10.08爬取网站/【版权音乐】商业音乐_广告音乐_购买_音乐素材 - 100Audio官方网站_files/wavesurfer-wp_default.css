@@ -1,0 +1,190 @@
+
+.wavesurfer-download a {
+  color: white;
+  text-decoration: none;
+}
+/* 时间背景 */
+.wavesurfer-time, .wavesurfer-duration {
+  font-family: Arial;
+  background-color: #ffffff;
+  border-radius: 2px;
+  padding: 1px 4px 1px 4px;
+}
+/* 播放中的颜色 */
+button.wavesurfer-active-button {
+  background-color: #bababa;
+}
+
+/* 暂停后的颜色 
+button.wavesurfer-paused-button {
+  background-color: #bababa;
+}
+*/
+.wavesurfer-buttons_set button:before, .wavesurfer-buttons_set div:before {
+  font-family: "wavesurfer", "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  width: 1em;
+}
+
+.wavesurfer-time:before, .wavesurfer-duration:before {
+  padding-right: 0.3em;
+}
+
+button.wavesurfer-play:before {
+  content: "\f04b";
+}
+
+button.wavesurfer-play.wavesurfer-active-button:before {
+  content: "\f04c";
+}
+
+button.wavesurfer-paused-button:before {
+  content: "\f04b";
+  padding-right: 0em;
+}
+
+button.wavesurfer-stop:before {
+  content: "\f04d";
+}
+
+div.wavesurfer-time:before {
+  content: "\f041";
+}
+
+div.wavesurfer-duration:before {
+  content: "\f017";
+}
+
+button.wavesurfer-download:before {
+  content: "\f019";
+}
+
+button.wavesurfer-loop:before {
+  content: "\f01e";
+}
+
+button.wavesurfer-loop.wavesurfer-active-button:before {
+  content: "\f061";
+}
+
+button.wavesurfer-mute:before {
+  content: "\f028";
+  padding-right: 4.5px;
+}
+
+button.wavesurfer-mute.wavesurfer-active-button:before {
+  content: "\f026\f00d";
+  padding-right: 0px;
+}
+
+.wavesurfer-time {
+  margin-left: Auto;
+}
+
+@media (max-width: 550px) {
+  .wavesurfer-duration {
+    display: none;
+  }
+  .wavesurfer-time {
+    display: none;
+  }
+  .wavesurfer-block button span, .wavesurfer-time span, .wavesurfer-duration span {
+    padding-left: 0.3em;
+    display: none;
+  }
+}
+
+.wavesurfer-block button span, .wavesurfer-time span, .wavesurfer-duration span {
+  padding-left: 0.3em;
+}
+
+.wavesurfer-block wave:hover {
+  cursor: pointer;
+}
+
+
+/* Playlist */
+
+.wavesurfer-list-group {
+  counter-reset: section;
+  list-style-type: none;
+  padding: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.wavesurfer-list-group li:hover {
+  cursor: pointer;
+}
+
+.wavesurfer-active-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#waveform {
+  position: relative;
+}
+
+.wavesurfer-progress {
+  position: relative;
+  display: none;
+  /* since 2.2 */
+}
+
+.wavesurfer-loading[value] {
+  border: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background-color: #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+  position: absolute;
+  z-index: 10;
+  margin-top: -80px;
+}
+
+.wavesurfer-marker {
+ color: #EBEBEB;
+}
+.wavesurfer-marker:hover {
+ color:white;
+ cursor: pointer;
+ text-decoration: underline;
+}
+.wavesurfer-marker-current {
+ color:#ffffff;
+ background:none;
+ font-weight: bold;
+ text-outline: 2px 1px black;
+ font-size: 1.2em;
+/*  text-shadow: 1px 1px 1px #242424;*/
+}
+
+/* PLAYLIST - Tracks */
+.wavesurfer-list-group .list-group-item {
+  display: flex;
+  align-items: center;
+}
+
+.wavesurfer-playlist-track-artist {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.wavesurfer-playlist-track-title {
+  margin-left: 0.5em;
+}
+
+.wavesurfer-playlist-track-duration {
+  margin-left: auto;
+}
+
+.wavesurfer-playlist-track-thumbnail {
+  margin-right: 0.5em;
+}
+
+.wavesurfer-playlist-track-thumbnail img {
+  max-height: 4em;
+  width: auto;
+}

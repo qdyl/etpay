@@ -1,0 +1,93 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body .body {
+  width: 100%;
+  color: #fff;
+  font-size: 0.14rem;
+  background: url("../img/chang-c-b.png") 100% no-repeat;
+  background-size: 100%;
+}
+html body .body .fstar-header {
+  width: 100%;
+}
+html body .body .fstar-header .back {
+  top: 0.2rem;
+  left: 0.15rem;
+  width: 0.25rem;
+  height: 0.3rem;
+  color: #666;
+  background: url("../img/back-black.png") no-repeat;
+  -webkit-background-size: 60%;
+  background-size: 60%;
+}
+html body .body .fstar-section {
+  margin: 0 0.22rem 0 0.18rem;
+}
+html body .body .fstar-section .one {
+  height: 2.2rem;
+  background: url("../img/fstar-img-one.png") 100% no-repeat;
+  background-size: 100%;
+}
+html body .body .fstar-section .one .text {
+  padding: 0.35rem 0.15rem 0.26rem 0.2rem;
+  line-height: 0.2rem;
+}
+html body .body .fstar-section .two {
+  height: 2.5rem;
+  background: url("../img/fstar-img-two.png") 100% no-repeat;
+  background-size: 100%;
+}
+html body .body .fstar-section .two .text {
+  padding: 0.4rem 0.15rem 0 0.2rem;
+  line-height: 0.2rem;
+}
+html body .body .fstar-section .three {
+  height: 3.5rem;
+  background: url("../img/fstar-img-three.png") 100% no-repeat;
+  background-size: 100%;
+}
+html body .body .fstar-section .three .text {
+  padding: 0.5rem 0.15rem 0 0.2rem;
+  line-height: 0.2rem;
+}
+html body .body .fstar-section .four {
+  height: 2.6rem;
+  background: url("../img/fstar-img-four.png") 100% no-repeat;
+  background-size: 100%;
+}
+html body .body .fstar-section .four .text {
+  padding: 0.5rem 0.15rem 0 0.2rem;
+  line-height: 0.2rem;
+}
+html body .body .fstar-section .exchange-group .title-wrap {
+  width: 3.08rem;
+  height: 0.68rem;
+  border: 1px solid #FFF;
+}
+html body .body .fstar-section .exchange-group .title-wrap .sub-wrap {
+  top: 0.08rem;
+  left: 0.08rem;
+  width: 3.08rem;
+  height: 0.68rem;
+  border: 1px solid #fff;
+  text-align: center;
+}
+html body .body .fstar-section .exchange-group .title-wrap .sub-wrap .title {
+  margin: 0.1rem 0 0.05rem;
+  font-size: 14px;
+}
+html body .body .fstar-section .exchange-group .title-wrap .sub-wrap .text a {
+  color: #fff;
+}
+html body .body .fstar-section .group-img {
+  width: 2.15rem;
+  height: 2.22rem;
+  margin: 0.4rem auto 0;
+  padding-bottom: 0.4rem;
+}

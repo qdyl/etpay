@@ -1,0 +1,357 @@
+
+
+@media (max-width: 768px) {
+    .edd_downloads_list.facetwp-template .col-xs-12 {
+        padding: 0;
+    }
+
+    .content-grid-download {
+        margin-bottom: 0px;
+    }
+
+    .edd_download_inner {
+        position: relative;
+        border-top: 1px solid #eee;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        padding: 0 15px;
+    }
+
+    .content-grid-download:first-child .edd_download_inner {
+        border-top: none;
+    }
+
+    .content-grid-download__entry-image {
+        position: absolute;
+        left: 10px;
+        top: 30px;
+    }
+
+    .content-grid-download__entry-image a {
+        padding: 5px;
+    }
+
+    body .edd_download a.edd-wl-action.edd-wl-button.edd-wl-favorite, body .edd_download a.edd-wl-action.edd-wl-button.edd-wl-favorite.favorited {
+        display: none;
+    }
+
+    .content-grid-download__entry-image img {
+        width: 50px;
+        height: auto;
+    }
+
+    .content-grid-download__entry-header {
+        background: transparent;
+        padding: 10px 0 0 0;
+    }
+
+    .edd_download_columns_1 .entry-title {
+        width: 100%;
+		width:13em;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+		-moz-binding:url('ellipsis.xml#ellipsis');
+		overflow:hidden;
+    }
+
+    .entry-meta .byline {
+        font-size: 12px;
+        right: -5px;
+		width:11em;
+		white-space:nowrap;
+		text-overflow:ellipsis;
+		-o-text-overflow:ellipsis;
+		-moz-binding:url('ellipsis.xml#ellipsis');
+		overflow:hidden;
+        text-align: right;
+    }
+
+    .content-grid-download .download-audio {
+        margin-left: 65px;
+    }
+
+    .content-grid-download__entry-price {
+        float: none;
+        margin: 0;
+    }
+
+    .edd_purchase_submit_wrapper {
+        position: static;
+    }
+	.popup .edd_purchase_submit_wrapper {
+		background-color:#515a63;
+    }
+    .content-grid-download__entry-price .item-price {
+        position: absolute;
+        bottom: -11px;
+        right: 20px;
+    }
+
+      .content-grid-download__entry-price a.edd_go_to_checkout, .content-grid-download__entry-price a.buy-now {
+        position: absolute;
+        bottom: -42px;
+        background: transparent;
+        color: transparent;
+        border: none;
+    }
+
+    .content-grid-download__entry-price a.buy-now {
+        bottom: -63px;
+    }
+
+  .edd-submit.button, .edd-submit.button:focus, .content-grid-download__entry-price a.edd_go_to_checkout:focus, .content-grid-download__entry-price a.buy-now:focus {
+        color: transparent;
+        border-color: transparent;
+        background: transparent;
+    }
+
+    .popup .edd-submit.button, .popup .edd-submit.button:focus {
+        color: #515a63;
+        border-color: #515a63;
+       /* background: #ffffff; */
+    }
+
+    .content-grid-download__entry-price a.buy-now, .content-grid-download__entry-price a.edd_go_to_checkout  {
+        right: 12px;
+        width: 33%;
+        max-width: 33%;
+    }
+
+    .content-grid-download__entry-price a.buy-now:before, .content-grid-download__entry-price a.edd_go_to_checkout:before ,.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js:before{
+        font: normal normal normal 24px/1 FontAwesome;
+        display: inline-block;
+        width: 100%;
+    }
+	.edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js{
+        position: absolute;
+        bottom: -42px;
+        background: transparent;
+        color: transparent;
+        border: none;
+        right: 12px;
+        width: 33%;
+        max-width: 33%;
+	}
+	.popup .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js{
+        width: 100%;
+        max-width: 100%;
+	}
+    .edd_download_inner .content-grid-download__entry-price a.button.buy-now.popup-trigger:before,.edd_download_inner .content-grid-download__entry-price .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js:before {
+        content: '\f07a';
+        color: #515a63;
+    }
+
+	.edd_download_purchase_form, .content-grid-download__entry-price a.edd_go_to_checkout:before {
+        content: '\f217';
+        color: #515a63;
+    }
+
+
+    .content-grid-download__entry-price .item-price span {
+        display: none;
+    }
+
+    .content-grid-download__entry-price .item-price span.edd_price {
+        display: inline-block;
+        font-size: 13px;
+    }
+
+    .wavesurfer-player {
+        margin-top: 3px;
+    }
+    .wavesurfer-player wave, .wavesurfer-player wave canvas {
+        height: 50px !important;
+    }
+
+    button.wavesurfer-play {
+        position: absolute;
+        left: 7px;
+        top: 42px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    button.wavesurfer-play:focus {
+        outline: none;
+    }
+
+    div.wavesurfer-duration:before, div.wavesurfer-time:before {
+        content: '';
+    }
+
+    .wavesurfer-duration, .wavesurfer-time {
+        position: static;
+        float: left;
+		font-size: 10px
+    }
+
+    .wavesurfer-duration {
+        margin-left: 5px;
+    }
+
+	/* 5音档界面重设 */
+	.mfp-content {
+	    position: relative;
+	    display: inline-block;
+	    vertical-align: bottom;
+	    margin: 0 auto 54px;
+	    text-align: left;
+	    z-index: 505;
+	}
+
+	.section-title span{
+	    padding: 0px 20px 0px;
+	    border: 0;
+		font-size: 16px;
+		bottom: 10px;
+	}
+	.section-title{
+		text-align: left;
+	}
+	.section-title:after{
+	    content: ' ';
+	    width: 100%;
+	    height: 1px;
+	    position: absolute;
+	    top: auto;
+	    left: 0;
+	    right: 0;
+	    background: #ededed;
+	    z-index: 1;
+	    bottom: 0px;
+	}
+
+	/* 顶上的空间 */
+	.mfp-content .popup{
+	    padding: 25px 0 0px;
+		margin: 0;
+		max-width: 768px;
+	}
+
+	/* 线下面的空间 */
+	.mfp-content .section-title{
+	margin-bottom: 5px;
+	}
+
+	/* 无黑边 */
+	.mfp-container {
+	    padding-left: 0px;
+	    padding-right: 0px;
+	}
+	/* 购物车位置 */
+	.mfp-container .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
+	    position: inherit;
+	}
+	.mpf-content .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
+	    position: absolute;
+	    bottom: -42px;
+	    background: transparent;
+	    color: transparent;
+	    right: 12px;
+	    width: 100%;
+	    max-width: 100%;
+		border:#515a63;
+		background-color:#515a63;
+	}
+	.popup .edd-submit.button {
+		color:white;
+		width:100%;
+		background-color: #515a63;
+	}
+	.edd_purchase_submit_wrapper .edd-add-to-cart.edd-has-js:before {
+	    content: '\f217';
+	    color: transparent;
+	}
+	.edd_download_purchase_form .edd_price_options li {
+	    padding: 1px 13px;
+	    border-bottom: 0px solid #bdc3c7;
+	    margin-bottom: 0;
+	}
+	.edd_download_purchase_form .edd_price_options li label{
+       border: 8px solid #ededed;
+       background: #ededed;
+       border-radius: 5px;
+       vertical-align: middle;
+       cursor: pointer;
+       -webkit-appearance: none;
+	   }
+	   .popup .edd_download_purchase_form .edd_price_options {
+	       margin-bottom: 10px;
+	   }
+	   .mfp-close-btn-in .mfp-close{
+	   	top: 3px;
+		right: 0.4em;
+		color: #bdc3c7;
+	   }
+   	.popup .edd-add-to-cart-label {
+		position: absolute;
+		    bottom: 14px;
+		    color: white;
+		    left: 40%;
+		    right: 40%;
+   	}
+   	.mfp-content .edd-loading {
+   	    position: absolute;
+   	    top: 92%;
+		background-color: #515a63;
+   	}
+	.edd_download_inner .edd_go_to_checkout.button.edd-submit{
+		color:transparent;
+		background-color:transparent;
+		border-color:transparent;
+	}
+}
+
+@media (max-width: 414px) {
+	.edd_download_purchase_form .edd_price_options li {
+	    padding: 5px 13px;
+	}
+	.edd_download_purchase_form .edd_price_options li label{
+       border: 12px solid #ededed;
+   }
+}
+@media (max-width: 768px) {
+	/* 獨家音樂人角標 */
+	.vendor-exclusive{
+		padding: 0 !important;
+		border-bottom: 15px solid #4f575E;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		height: 0;
+		width: 45px;
+		position: absolute;
+		transform: rotate(-45deg);
+		top: -27px;
+		left: -22px;
+	}
+	.vendor-exclusive.en{
+
+	}
+	.vendor-exclusive:before {
+		content: "独家";
+		display: block;
+		width: 100px;
+		position: absolute;
+		left: 0px;
+		top: 1px;
+		color: #fff;
+		font-size: 9px;
+	}
+	.vendor-exclusive.en:before {
+		content: 'Exclusive';
+		font-size: 7px;
+		left: -7px;
+		top: 3px;
+	}
+
+	.marketify-widget--download-single-details {
+		margin-top: 0;
+	}
+}

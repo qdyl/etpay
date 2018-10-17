@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">BTC账户</h2>
+</header>
+<div class="height-44"></div>
+<section id="qianbao-btc">
+    <ul class="qb-btc-items">
+        <li class="qb-btc-item clearfix-zl">
+            <div class="fl">BTC总资产</div>
+            <div class="color-D73F4E fr">1.789005</div>
+        </li>
+        <li class="qb-btc-item clearfix-zl">
+            <div class=" fl">
+               <p>折合USDT<span>1.789005</span></p>
+            </div>
+            <div class=" fr">
+                <p>折合ETPAY<span>1.789005</span></p>
+            </div>
+        </li>
+    </ul>
+
+    <ul class="">
+        <li class="xinbi-btns clearfix-zl">
+            <div class="xinbi-btn fl active">
+                <span>充值BTC</span>
+            </div>
+            <div class="xinbi-btn fr">
+                <span>提取BTC</span>
+            </div>
+        </li>
+    </ul>
+
+   <div>
+       <!--充值BTC-->
+       <div class="common-form-div">
+           <div class="charge-tiqu-main common-charge-tiqu">
+               <div class="span-text">
+                   <small>向如下地址汇入BTC完成充值</small>
+                   <p>1jvhv161sdh521gvshgdv5121ahsvahvshav1jvhv161sdh521gvshg</p>
+               </div>
+               <div class="copy-check-btn clearfix-zl">
+                   <span class="fl one-click-copy" onclick="copy()">一键复制</span>
+                   <a href="erweima.html"><span class="fr">查看二维码</span></a>
+               </div>
+           </div>
+           <div class="info-p">
+               <div><small>提示:</small><p>BTC地址只能充值BTC资产，任何充入BTC地址非BTC资产将不可找回。</p></div>
+           </div>
+       </div>
+
+        <!--提取BTC-->
+       <form action="" class="common-form-div none">
+           <ul class="daifaxinbi-items">
+               <li class="dai-f-item">
+                   <a href="dizhiguanli.html" class="div-a">
+                       <span class="left fl">发送地址</span>
+                       <span class="center fl">请选择发送地址</span>
+                       <span class="fr"><i class="entry-icon"></i></span>
+                   </a>
+               </li>
+               <li class="dai-f-item">
+                   <div  class="div-a">
+                       <span class="left fl">发送数量</span>
+                       <input type="number" placeholder="请输入发送数量">
+                       <span class="fr">BTC</span>
+                   </div>
+               </li>
+               <li class="dai-f-item">
+                   <div  class="div-a">
+                       <span class="left fl">手续费</span>
+                       <span class=" fl">24</span>
+                       <span class="fr">ETPAY</span>
+                   </div>
+               </li>
+           </ul>
+       </form>
+   </div>
+
+</section>
+
+<div class="copy-success" style="display: none;">
+    <span>复值成功！</span>
+</div>
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 切换：选项
+    $(".xinbi-btn").click(function () {
+        let indexx = $(this).index();
+        $(this).addClass("active").siblings(".xinbi-btn").removeClass("active");
+        $(".common-form-div").eq(indexx).css("display","block").siblings(".common-form-div").css("display","none");
+    });
+    // 一键复制
+    function copy() {
+        let message = $(".span-text p").text();
+        let input = document.createElement("input");
+        input.value = message;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+        document.body.removeChild(input);
+        document.getElementsByClassName("copy-success")[0].style.display = "block";
+        setTimeout("success_alert()",2000);//2秒，可以改动
+    }
+    function success_alert(){
+        let copytext = document.getElementsByClassName("copy-success")[0];
+        copytext.style.display="none";
+    }
+
+    // 查看“”
+
+
+</script>
+</html>

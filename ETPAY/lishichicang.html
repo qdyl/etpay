@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">历史订单</h2>
+</header>
+<div class="height-44"></div>
+<section id="lishichicang">
+    <ul class="chicang-jiaoyi-items">
+        <li class="c-j-item c-j-choose-date">
+            <form>
+                <div class="choose-date"><i class="date-icon"></i><input type="text" id="date1" placeholder="开始时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                <div class="choose-date"><i class="date-icon"></i><input type="text" id="date2" placeholder="结束时间" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088}" style="width:70%;color: #fff;"></div>
+                <button class="submit-btn-comfirm" type="submit">确定</button>
+            </form>
+            <div class="chicangdingdan">
+                <div class="main">
+                    <ul class="main-header">
+                        <li class="li-title clearfix-zl">
+                            <div class="left fl">BTC/USDT</div>
+                            <div class="right fr">订单编号:12345678</div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                                买入时间: <span>2018/1/1 14:12</span>
+                            </div>
+                            <div class="right fr">
+                                买入价格: <span>6333.33</span>
+                            </div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                                买入数量: <span>1000</span>
+                            </div>
+                            <div class="right fr">
+                                买出价格: <span>1000</span>
+                            </div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                               卖出时间: <span class="">2018/1/1 14:12</span>
+                            </div>
+                            <div class="right fr">
+                                盈亏: <span class="f-size-20-1FC65C">+880</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main">
+                    <ul class="main-header">
+                        <li class="li-title clearfix-zl">
+                            <div class="left fl">BTC/USDT</div>
+                            <div class="right fr">订单编号:12345678</div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                                买入时间: <span>2018/1/1 14:12</span>
+                            </div>
+                            <div class="right fr">
+                                买入价格: <span>6333.33</span>
+                            </div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                                买入数量: <span>1000</span>
+                            </div>
+                            <div class="right fr">
+                                买出价格: <span>1000</span>
+                            </div>
+                        </li>
+                        <li class="li-item clearfix-zl">
+                            <div class="left fl">
+                                卖出时间: <span class="">2018/1/1 14:12</span>
+                            </div>
+                            <div class="right fr">
+                                盈亏: <span class="f-size-20-1FC65C">+880</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="js/jquery.date.js"></script> <!--选择时间插件-->
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 时间插件
+    $.date('#date1');
+    $.date('#date2');
+</script>
+</html>

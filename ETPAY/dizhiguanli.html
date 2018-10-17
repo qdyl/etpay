@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <i class="back-return-icon" onclick="history.go(-1)"></i>
+    <h2 class="title">地址管理</h2>
+    <span class="choose-title-items"><a class="color-fff" href="xinzengdizhi.html">新增地址</a></span>
+</header>
+<div class="height-44"></div>
+<section id="dizhiguanli">
+        <ul class="items">
+            <li class="item">
+                <i class="icon active"></i>
+                <label class="fr" for="one">
+                    <input name="choose-address" type="radio" id="one" checked >
+                    1jvhv161sdh521gvshgdv5121ahsvahvshav1jvhv161sdh521gvshg
+                </label>
+                <span class="delte-span">删除</span>
+            </li>
+            <li class="item">
+                <i class="icon"></i>
+                <label class="fr" for="two">
+                    <input name="choose-address" type="radio" id="two" >
+                    1jvhv161sdh521gvshgdv5121ahsvahvshav1jvhv161sdh521gvshg
+                </label>
+                <span class="delte-span">删除</span>
+            </li>
+            <li class="item">
+                <i class="icon"></i>
+                <label class="fr" for="three">
+                    <input name="choose-address" type="radio" id="three" >
+                    1jvhv161sdh521gvshgdv5121ahsvahvshav1jvhv161sdh521gvshg
+                </label>
+                <span class="delte-span">删除</span>
+            </li>
+        </ul>
+
+
+</section>
+
+<div>
+    <div class="pop-ceng ceng-mask  none">
+        <div class="popMain ">
+            <div class="popTop-title"><h5>删除</h5></div>
+            <div class="popMiddle">
+                <p>该地址将会删除？</p>
+            </div>
+            <div class="popBottom" >
+                <span class="confirm">确认</span>
+                <span class="cancel">取消</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="new-add-address">
+    <form action="" class="common-form-div">
+        <ul class="daifaxinbi-items">
+            <li class="dai-f-item">
+                    <input type="number" placeholder="请输入发送BTC地址">
+                    <span class="fr">BTC</span>
+            </li>
+            <li class="dai-f-item">
+                <div  class="div-a">
+                    <span class="left fl">手续费</span>
+                    <span class=" fl">24</span>
+                    <span class="fr">ETPAY</span>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>-->
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 点选地址
+    $("#dizhiguanli .item").click(function () {
+        let ind =$(this).index();
+        if($(this).find("input").is(":checked")){
+            $(this).find(".icon").addClass("active");
+        }
+        $(".item:not(:eq("+ind+"))").find(".icon").removeClass("active")
+    })
+
+    // 点击新增地址
+
+    // 删除地址
+        let num;
+        $(".delte-span").on('click', function(event) {
+            event.preventDefault();
+            num = $(this).parent().index();
+            $(".pop-ceng").fadeIn('fast');
+        });
+        $(".popBottom").on('click', 'span', function(event) {
+            event.preventDefault();
+            if($(this).hasClass('confirm')){
+                $(".items .item").eq(num).remove();
+                num = "";
+                $(".pop-ceng").fadeOut();
+            }else{
+                $(".pop-ceng").fadeOut();
+                num = "";
+            }
+        });
+
+    /*$(".delte-span").click(function () {
+        $(".pop-ceng").show();
+
+    })*/
+</script>
+</html>

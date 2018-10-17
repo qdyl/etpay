@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/reset-init.css">
+    <link rel="stylesheet" href="css/layout-style.css">
+</head>
+<body>
+<header class="header-fixed">
+    <h2 class="title">新币发行</h2>
+</header>
+<div class="height-44"></div>
+<section id="xinbifaxing">
+    <ul class="xinbifaxing-items">
+        <li class="x-b-item-title">
+            <div class="title"><h4>名称</h4></div>
+            <div class="title"><h4>价格</h4></div>
+            <div class="title"> <h4>涨幅</h4></div>
+        </li>
+        <li class="x-b-item">
+            <div class="x-item">
+                <p class="left-top"><strong>ONE</strong>/ETPAY</p>
+                <small class="left-bott">24H量 <span>34445</span></small>
+            </div>
+            <div class="x-item">
+                <p class="center-top f-size-14-D73F4E">6333.33</p>
+                <p class="f-size-12-D73F4E">$ 48898.99</p>
+            </div>
+            <div class="x-item">
+                <p class="right-r">
+                    <span class="z-f-percent bg-D73F4E">0.00%</span>
+                </p>
+            </div>
+        </li>
+        <li class="x-b-item">
+            <div class="x-item">
+                <p class="left-top"><strong>UN</strong>/ETPAY</p>
+                <small class="left-bott">24H量 <span>34445</span></small>
+            </div>
+            <div class="x-item">
+                <p class="center-top f-size-14-D73F4E">6333.33</p>
+                <p class="f-size-12-D73F4E">$ 48898.99</p>
+            </div>
+            <div class="x-item">
+                <p class="right-r">
+                    <span class="z-f-percent bg-1EBC52">0.00%</span>
+                </p>
+            </div>
+        </li>
+        <li class="x-b-item">
+            <div class="x-item">
+                <p class="left-top"><strong>SU</strong>/ETPAY</p>
+                <small class="left-bott">24H量 <span>34445</span></small>
+            </div>
+            <div class="x-item">
+                <p class="center-top f-size-14-D73F4E">6333.33</p>
+                <p class="f-size-12-D73F4E">$ 48898.99</p>
+            </div>
+            <div class="x-item">
+                <p class="right-r">
+                    <span class="z-f-percent bg-D73F4E">0.00%</span>
+                </p>
+            </div>
+        </li>
+
+    </ul>
+
+    <ul class="daifaxinbi-items">
+        <li class="dai-f-item">
+            <a href="xinbifaxing-daifaxinbi.html" class="">
+                <span class="fl">待发新币</span>
+                <i class="entry-icon fr"></i>
+            </a>
+        </li>
+        <li class="dai-f-item">
+            <a href="xinbifaxing-daifaxinbi.html" class="">
+                <span class="fl">待发新币</span>
+                <i class="entry-icon fr"></i>
+            </a>
+        </li>
+    </ul>
+
+</section>
+<div class="height-150"></div>
+<footer class="com-footer">
+    <ul class="footer-items clearfix-zl">
+        <li class="footer-item fl ">
+            <a href="index.html">
+                <div class="details">
+                    <i class="icon one-icon"></i>
+                    <p>首页</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="huobijiaoyi.html">
+                <div class="details">
+                    <i class="icon two-icon"></i>
+                    <p>货币交易</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl active">
+            <a href="xinbifaxing.html">
+                <div class="details">
+                    <i class="icon three-icon"></i>
+                    <p>新币发行</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="bibijiaoyi.html">
+                <div class="details">
+                    <i class="icon four-icon"></i>
+                    <p>币币交易</p>
+                </div>
+            </a>
+        </li>
+        <li class="footer-item fl">
+            <a href="gerenzhongxin.html">
+                <div class="details">
+                    <i class="icon five-icon"></i>
+                    <p>个人中心</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</footer>
+
+
+
+</body>
+<script src="./js/jquery-2.1.4.min.js"></script>
+<script src="./js/common-style.js"></script> <!--公共js文件-->
+<script>
+    // 点击：跳转到对应的详情页
+    $(".x-b-item").click(function () {
+        let a_index ="xinbifaxing_"+$(this).find("strong").text()+".html";
+        window.location.href = a_index;
+    });
+</script>
+</html>
